@@ -11,4 +11,4 @@ Route::group(['prefix' => 'api/v1'], function() {
 
 });
 
-Route::get('/{vue?}', 'HomeController@show')->where('vue', '.*');
+Route::get('/{vue?}', 'HomeController@show')->where('vue', '.*');x

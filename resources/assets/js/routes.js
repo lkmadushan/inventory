@@ -25,4 +25,4 @@ var routes = {
     }
 };
 
-module.exports = routes;x
+module.exports = routes;

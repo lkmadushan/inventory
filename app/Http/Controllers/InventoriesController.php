@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\InventoryRequest;
 use App\Inventory;
 
 class InventoriesController extends Controller
@@ -19,5 +20,9 @@ class InventoriesController extends Controller
         return response()->json($item->toArray());
     }
 
+    public function store(InventoryRequest $request)
+    {
+        return Inventory::create($request->only(['item_no', 'name','description']));
+    }
     
 }

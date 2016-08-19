@@ -2,7 +2,7 @@
     <div>
         <div class="row">
             <div class="col-md-12">
-                <item-card :callback="updateInventory" :item="item"></item-card>
+                <item-card :callback="createInventory"></item-card>
             </div>
         </div>
     </div>
@@ -15,12 +15,6 @@
     import InventoryService from '../../inventory/services/InventoryService';
 
     export default {
-        data() {
-            return {
-                item: {}
-            }
-        },
-
         components: {
             'tab': VueStrap.tab,
             'tabs': VueStrap.tabset,
@@ -29,19 +23,9 @@
             'item-card': ItemCard
         },
 
-        methods: {
-            updateInventory(data) {
+        methods:{
+            createInventory(data){
                 InventoryService.store(data).then(response => console.log(response));
-            }
-        },
-
-        route: {
-            data(transition) {
-                var id = transition.to.params.id;
-
-                return {
-                    item: InventoryService.find(id)
-                }
             }
         }
     }

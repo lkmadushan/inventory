@@ -5,6 +5,11 @@
     <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ url('css/app.css') }}">
 </head>
+<script>
+    window.Laravel = {
+        csrfToken: '{{ csrf_token() }}'
+    }
+</script>
 <body>
 <div id="app">
     <router-view></router-view>

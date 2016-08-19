@@ -91,7 +91,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="colour" class="col-sm-4 control-label">Color/Finish</label>
+                                        <label for="color" class="col-sm-4 control-label">Color/Finish</label>
                                         <div class="col-sm-8">
                                             <select v-model="selected"
                                                     class="form-control"
@@ -196,63 +196,206 @@
 
 
                                 <div class="col-md-4">
+
                                     <div class="form-group">
-                                        <label for="colour" class="col-sm-4 control-label">Colour</label>
+                                        <label for="approved_date" class="col-sm-4 control-label">Approved Date</label>
                                         <div class="col-sm-8">
                                             <input type="text"
                                                    class="form-control"
-                                                   name="colour"
-                                                   id="colour"
+                                                   name="approved_date"
+                                                   id="approved_date"
                                                    value=""
-                                                   placeholder="Colour">
+                                                   placeholder="Approved Date">
                                         </div>
                                     </div>
+
                                     <div class="form-group">
-                                        <label for="hex_colour_code" class="col-sm-4 control-label">Colour hex
-                                            code</label>
+                                        <label for="ref_R&D" class="col-sm-4 control-label">Ref R&D</label>
+                                            <div class="col-sm-8">
+                                                <input type="checkbox" id="ref_R&D" value="ref_R&D" v-model="ref_R&D">
+                                            </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="approved_by" class="col-sm-4 control-label">Approved By
+                                            Code</label>
+                                        <div class="col-sm-8">
+                                            <select v-model="selected"
+                                                    class="form-control"
+                                                    id="approved_by"
+                                                    name="approved_by"
+                                                    placeholder="Product Group Code">
+                                                <option selected>User1</option>
+                                                <option>User2</option>
+                                                <option>User3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="height" class="col-sm-4 control-label">Inventory</label>
                                         <div class="col-sm-8">
                                             <input type="text"
                                                    class="form-control"
-                                                   name="hex_colour_code"
-                                                   id="hex_colour_code"
+                                                   name="inventory"
+                                                   id="inventory"
                                                    value=""
-                                                   placeholder="Colour hex code">
+                                                   placeholder="Inventory">
                                         </div>
                                     </div>
+
                                     <div class="form-group">
-                                        <label for="width" class="col-sm-4 control-label">Width</label>
+                                        <label for="depth" class="col-sm-4 control-label">Qty On Purch Order</label>
                                         <div class="col-sm-8">
                                             <input type="text"
                                                    class="form-control"
-                                                   name="width"
-                                                   id="width"
+                                                   name="qty_on_purch_order"
+                                                   id="qty_on_purch_order"
                                                    value=""
-                                                   placeholder="Width">
+                                                   placeholder="Qty On Purchase Order">
                                         </div>
                                     </div>
+
+
                                     <div class="form-group">
-                                        <label for="height" class="col-sm-4 control-label">Height</label>
+                                        <label for="depth" class="col-sm-4 control-label">Qty On Prod Order</label>
                                         <div class="col-sm-8">
                                             <input type="text"
                                                    class="form-control"
-                                                   name="height"
-                                                   id="height"
+                                                   name="qty_on_prod_order"
+                                                   id="qty_on_prod_order"
                                                    value=""
-                                                   placeholder="Height">
+                                                   placeholder="Qty On Product Order">
                                         </div>
                                     </div>
+
                                     <div class="form-group">
-                                        <label for="depth" class="col-sm-4 control-label">Depth</label>
+                                        <label for="depth" class="col-sm-4 control-label">Qty On Comp Lines</label>
                                         <div class="col-sm-8">
                                             <input type="text"
                                                    class="form-control"
-                                                   name="depth"
-                                                   id="depth"
+                                                   name="qty_on_comp_lines"
+                                                   id="qty_on_comp_lines"
                                                    value=""
-                                                   placeholder="Depth">
+                                                   placeholder="Qty On Component Lines">
                                         </div>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label for="depth" class="col-sm-4 control-label">Qty On Sales Order</label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   class="form-control"
+                                                   name="qty_on_sales_order"
+                                                   id="qty_on_sales_order"
+                                                   value=""
+                                                   placeholder="Qty On Sales Order">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="depth" class="col-sm-4 control-label">Qty On Service Order</label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   class="form-control"
+                                                   name="qty_on_service_order"
+                                                   id="qty_on_service_order"
+                                                   value=""
+                                                   placeholder="Qty On Service Order">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="approved_by" class="col-sm-4 control-label">Service Item Group</label>
+                                        <div class="col-sm-8">
+                                            <select v-model="selected"
+                                                    class="form-control"
+                                                    id="service_item_group"
+                                                    name="service_item_group"
+                                                    placeholder="Service Item Group">
+                                                <option selected>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="is_blocked" class="col-sm-4 control-label">Blocked</label>
+                                        <div class="col-sm-8">
+                                            <input type="checkbox" id="is_blocked" value="is_blocked" v-model="is_blocked">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="depth" class="col-sm-4 control-label">Last Date Modified</label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   class="form-control"
+                                                   name="last_date_modified"
+                                                   id="last_date_modified"
+                                                   value=""
+                                                   placeholder="Last Date Modified">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="depth" class="col-sm-4 control-label">Creation Date</label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   class="form-control"
+                                                   name="creation_date"
+                                                   id="creation_date"
+                                                   value=""
+                                                   placeholder="Creation Date">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="depth" class="col-sm-4 control-label">Created By</label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   class="form-control"
+                                                   name="created_by"
+                                                   id="created_by"
+                                                   value=""
+                                                   placeholder="Created By">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="is_blocked" class="col-sm-4 control-label">Stockkeeping Unit Exists</label>
+                                        <div class="col-sm-8">
+                                            <input type="checkbox" id="is_exist" value="is_exist" v-model="is_exist">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="is_blocked" class="col-sm-4 control-label">SKU Item</label>
+                                        <div class="col-sm-8">
+                                            <input type="checkbox" id="is_sku_item" value="is_sku_item" v-model="is_sku_item">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="is_blocked" class="col-sm-4 control-label">UL Certified</label>
+                                        <div class="col-sm-8">
+                                            <input type="checkbox" id="is_ul_certified" value="is_ul_certified" v-model="is_ul_certified">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="is_blocked" class="col-sm-4 control-label">ROHS</label>
+                                        <div class="col-sm-8">
+                                            <input type="checkbox" id="is_rohs" value="is_rohs" v-model="is_rohs">
+                                        </div>
+                                    </div>
+
                                 </div>
+
+
+
+
                             </div>
                             <input type="hidden" name="_token" value="">
                             <input type="hidden" name="_method" value="PATCH">

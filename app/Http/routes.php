@@ -5,7 +5,7 @@ Route::group(['prefix' => 'api/v1'], function() {
     Route::get('/inventories', 'InventoriesController@index');
     Route::get('/inventories/{item}', 'InventoriesController@show');
     Route::post('/inventories/{item}/physical-stocks', 'InventoriesController@storePhysicalStock');
-    
+    Route::post('/inventories','InventoriesController@store');
     Route::get('/inventories/verification','InventoriesController@index');
     
 

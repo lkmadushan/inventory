@@ -685,88 +685,373 @@
             <tab header="Replenishment">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="name" class="col-sm-4 control-label">Item No.</label>
-                            <div class="col-sm-8">
-                                <input type="text"
-                                       class="form-control"
-                                       name="item_no"
-                                       v-model="item.item_no"
-                                       id="item_no"
-                                       required
-                                       placeholder="Item no.">
-                            </div>
-                        </div>
 
                         <div class="form-group">
-                            <label for="base_unit_of_measure" class="col-sm-4 control-label">Base
-                                UoM</label>
+                            <label for="replenishment_system" class="col-sm-4 control-label">Replenishment System</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
                                         class="form-control"
-                                        id="base_unit_of_measure"
-                                        name="base_unit_of_measure"
-                                        placeholder="Base UoM">
-                                    <option selected>EA</option>
-                                    <option>Kg</option>
-                                    <option>Ltr</option>
+                                        id="replenishment_system"
+                                        name="replenishment_system"
+                                        placeholder="Replenishment System">
+                                    <option selected>Purchase</option>
+                                    <option>Prod order</option>
                                 </select>
-                                <!--<span>Selected: {{ selected }}</span>-->
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="is_blocked" class="col-sm-4 control-label">ROHS</label>
+                            <label for="pur_vendor_no" class="col-sm-4 control-label">Pur Vendor No</label>
                             <div class="col-sm-8">
-                                <input type="checkbox" id="is_rohs" value="is_rohs" v-model="is_rohs">
+                                <select v-model="selected"
+                                        class="form-control"
+                                        id="pur_vendor_no"
+                                        name="pur_vendor_no"
+                                        placeholder="Pur Vendor No">
+                                    <option selected>Saniro</option>
+                                    <option>Elsteel Denmark</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="vendor_item_no" class="col-sm-4 control-label">Vendor Item No</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="vendor_item_no"
+                                       v-model="vendor_item_no"
+                                       id="vendor_item_no"
+                                       required
+                                       placeholder="Vendor Item No">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pur_unit_of_measure" class="col-sm-4 control-label">Pur Unit Of Measure</label>
+                            <div class="col-sm-8">
+                                <select v-model="selected"
+                                        class="form-control"
+                                        id="pur_unit_of_measure"
+                                        name="pur_unit_of_measure"
+                                        placeholder="Pur Unit Of Measure">
+                                    <option selected>EA</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lead_time_calculation" class="col-sm-4 control-label">Lead Time Calculation</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="lead_time_calculation"
+                                       v-model="lead_time_calculation"
+                                       id="lead_time_calculation"
+                                       required
+                                       placeholder="Lead Time Calculation">
                             </div>
                         </div>
 
                     </div>
+
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+                            <label for="production_manufactoring_policy" class="col-sm-4 control-label">Prod Manufactoring Policy</label>
+                            <div class="col-sm-8">
+                                <select v-model="selected"
+                                        class="form-control"
+                                        id="production_manufactoring_policy"
+                                        name="production_manufactoring_policy"
+                                        placeholder="Prod Manufactoring Policy">
+                                    <option selected>Make to stock</option>
+                                    <option>Make to order</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="routing_no" class="col-sm-4 control-label">Routing No</label>
+                            <div class="col-sm-8">
+                                <select v-model="selected"
+                                        class="form-control"
+                                        id="routing_no"
+                                        name="routing_no"
+                                        placeholder="Routing No">
+                                    <option selected>General</option>
+                                    <option>PC-0050</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="production_bom_no" class="col-sm-4 control-label">Production BOM No</label>
+                            <div class="col-sm-8">
+                                <select v-model="selected"
+                                        class="form-control"
+                                        id="production_bom_no"
+                                        name="production_bom_no"
+                                        placeholder="Production BOM No">
+                                    <option selected>UL-90259</option>
+                                    <option>UL-90255</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="rounding_precision" class="col-sm-4 control-label">Rounding Precision</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="rounding_precision"
+                                       v-model="rounding_precision"
+                                       id="rounding_precision"
+                                       required
+                                       placeholder="Rounding Precision">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="flushing_method" class="col-sm-4 control-label">Flushing Method</label>
+                            <div class="col-sm-8">
+                                <select v-model="selected"
+                                        class="form-control"
+                                        id="flushing_method"
+                                        name="flushing_method"
+                                        placeholder="Flushing Method">
+                                    <option selected>Manual</option>
+                                    <option>Forward</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="scrap" class="col-sm-4 control-label">Scrap %</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="scrap"
+                                       v-model="scrap"
+                                       id="scrap"
+                                       required
+                                       placeholder="Scrap">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lot_size" class="col-sm-4 control-label">Lot Size</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="lot_size"
+                                       v-model="lot_size"
+                                       id="lot_size"
+                                       required
+                                       placeholder="Lot Size">
+                            </div>
+                        </div>
+
+                    </div>
+
+
                 </div>
             </tab>
             <tab header="Planning">
                 <div class="row">
                     <div class="col-md-4">
+
                         <div class="form-group">
-                            <label for="name" class="col-sm-4 control-label">Item No.</label>
+                            <label for="reordering_policy" class="col-sm-4 control-label">Reordering Policy</label>
                             <div class="col-sm-8">
                                 <input type="text"
                                        class="form-control"
-                                       name="item_no"
-                                       v-model="item.item_no"
-                                       id="item_no"
+                                       name="reordering_policy"
+                                       v-model="reordering_policy"
+                                       id="reordering_policy"
                                        required
-                                       placeholder="Item no.">
+                                       placeholder="Reordering Policy">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="base_unit_of_measure" class="col-sm-4 control-label">Base
-                                UoM</label>
+                            <label for="include_inventory" class="col-sm-4 control-label">Include Inventory</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" id="include_inventory" value="include_inventory" v-model="include_inventory">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reserve" class="col-sm-4 control-label">Reserve</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
                                         class="form-control"
-                                        id="base_unit_of_measure"
-                                        name="base_unit_of_measure"
-                                        placeholder="Base UoM">
-                                    <option selected>EA</option>
-                                    <option>Kg</option>
-                                    <option>Ltr</option>
+                                        id="reserve"
+                                        name="reserve"
+                                        placeholder="Reserve">
+                                    <option selected>Optional</option>
+                                    <option>Never</option>
+                                    <option>Always</option>
                                 </select>
-                                <!--<span>Selected: {{ selected }}</span>-->
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="is_blocked" class="col-sm-4 control-label">ROHS</label>
+                            <label for="order_tracking_policy" class="col-sm-4 control-label">Order Tracking Policy</label>
                             <div class="col-sm-8">
-                                <input type="checkbox" id="is_rohs" value="is_rohs" v-model="is_rohs">
+                                <select v-model="selected"
+                                        class="form-control"
+                                        id="order_tracking_policy"
+                                        name="order_tracking_policy"
+                                        placeholder="Order Tracking Policy">
+                                    <option selected>None</option>
+                                    <option>Tracking Only</option>
+                                    <option>Tracking & action</option>
+                                </select>
                             </div>
                         </div>
 
                     </div>
+
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+                            <label for="reorder_cycle" class="col-sm-4 control-label">Reorder Cycle</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="reorder_cycle"
+                                       v-model="reorder_cycle"
+                                       id="reorder_cycle"
+                                       required
+                                       placeholder="Reorder Cycle">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="safety_lead_time" class="col-sm-4 control-label">Safety Lead Time</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="safety_lead_time"
+                                       v-model="safety_lead_time"
+                                       id="safety_lead_time"
+                                       required
+                                       placeholder="Safety Lead Time">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="safety_stock_quantity" class="col-sm-4 control-label">Safety Stock Qty</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="safety_stock_quantity"
+                                       v-model="safety_stock_quantity"
+                                       id="safety_stock_quantity"
+                                       required
+                                       placeholder="Safety Stock Qty">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reorder_point" class="col-sm-4 control-label">Reorder Point</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="reorder_point"
+                                       v-model="reorder_point"
+                                       id="reorder_point"
+                                       required
+                                       placeholder="Reorder Point">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reorder_quantity" class="col-sm-4 control-label">Reorder Qty</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="reorder_quantity"
+                                       v-model="reorder_quantity"
+                                       id="reorder_quantity"
+                                       required
+                                       placeholder="Reorder Quantity">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="maximum_inventory" class="col-sm-4 control-label">Maximum Inventory</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="maximum_inventory"
+                                       v-model="maximum_inventory"
+                                       id="maximum_inventory"
+                                       required
+                                       placeholder="Maximum Inventory">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="minimum_order_quantity" class="col-sm-4 control-label">Min Order Qty</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="minimum_order_quantity"
+                                       v-model="minimum_order_quantity"
+                                       id="minimum_order_quantity"
+                                       required
+                                       placeholder="Min Order Qty">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="maximum_order_quantity" class="col-sm-4 control-label">Max Order Qty</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="maximum_order_quantity"
+                                       v-model="maximum_order_quantity"
+                                       id="maximum_order_quantity"
+                                       required
+                                       placeholder="Max Order Qty">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="order_multiple" class="col-sm-4 control-label">Order Multiple</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="order_multiple"
+                                       v-model="order_multiple"
+                                       id="order_multiple"
+                                       required
+                                       placeholder="Order Multiple">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cons_adj_factor" class="col-sm-4 control-label">Cons Adj Factor %</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="cons_adj_factor"
+                                       v-model="cons_adj_factor"
+                                       id="cons_adj_factor"
+                                       required
+                                       placeholder="Cons Adj Factor %">
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
+
             </tab>
             <tab header="Foreign Trade">
                 <div class="row">

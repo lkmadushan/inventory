@@ -18,7 +18,7 @@
                                 </div>
                             </div>
                             <button type="submit"
-                                    class="btn btn-primary pull-right"><i class="fa fa-pencil-square-o"></i>Let's See</button>
+                                    class="btn btn-primary pull-right"><i class="fa fa-pencil-square-o"></i>View</button>
                         </div>
                     </div>
                 </form>

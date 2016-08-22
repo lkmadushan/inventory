@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Inventory extends Model
 {
-    protected $perPage = 15;
+    protected $perPage = 20;
 
     protected $fillable = [
         'item_no', 'name', 'description', 'quantity'

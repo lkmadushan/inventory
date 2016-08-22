@@ -21,7 +21,9 @@ export default class {
     }
 
     static verifyStock(data){
-        
+        // return Vue.http
+        //     .post('/api/v1/inventories/verify',data )
+        //     .then(response => response.json());
     }
     
 

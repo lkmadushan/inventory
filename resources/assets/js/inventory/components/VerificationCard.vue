@@ -1,10 +1,8 @@
 <template>
     <form class="form-horizontal" role="form" @submit.prevent="submitForm" method="post">
-        <tabs>
-            <tab header="General">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="name" class="col-sm-4 control-label">Item No.</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -16,7 +14,7 @@
                                        placeholder="Item no.">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="name" class="col-sm-4 control-label">Name</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -28,7 +26,7 @@
                                        placeholder="Item name">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="description" class="col-sm-4 control-label">Description</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -40,7 +38,7 @@
                                        placeholder="Item Description">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="base_unit_of_measure" class="col-sm-4 control-label">Base
                                 UoM</label>
                             <div class="col-sm-8">
@@ -56,7 +54,7 @@
                                 <!--<span>Selected: {{ selected }}</span>-->
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="width" class="col-sm-4 control-label">Width (mm)</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -66,7 +64,7 @@
                                        placeholder="Width">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="height" class="col-sm-4 control-label">Height (mm)</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -77,7 +75,7 @@
                                        placeholder="Height">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="depth" class="col-sm-4 control-label">Depth (mm)</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -87,7 +85,7 @@
                                        placeholder="Depth">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="color" class="col-sm-4 control-label">Color/Finish</label>
                             <div class="col-sm-8">
                                 <select v-model=""
@@ -101,7 +99,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="item_type" class="col-sm-4 control-label">Item Type</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -111,7 +109,7 @@
                                        placeholder="Item Type">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="main_location" class="col-sm-4 control-label">Main Location</label>
                             <div class="col-sm-8">
                                 <select v-model=""
@@ -125,7 +123,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="rack_no" class="col-sm-4 control-label">Rack No.</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -135,7 +133,7 @@
                                        placeholder="Rack Number">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="shelf_no" class="col-sm-4 control-label">Shelf
                                 No.</label>
                             <div class="col-sm-8">
@@ -146,7 +144,7 @@
                                        placeholder="Shelf Number">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="item_category_code" class="col-sm-4 control-label">Item Category
                                 Code</label>
                             <div class="col-sm-8">
@@ -161,7 +159,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="product_group_code" class="col-sm-4 control-label">Product Group
                                 Code</label>
                             <div class="col-sm-8">
@@ -176,22 +174,22 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <input type="checkbox" id="sl" value="sl" v-model="checkedNames">
                             <label for="sl">SL Item</label>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <input type="checkbox" id="in" value="in" v-model="checkedNames">
                             <label for="in">Indian Item</label>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <input type="checkbox" id="pl" value="pl" v-model="checkedNames">
                             <label for="in">Poland Item</label>
                         </div>
                     </div>
 
                     <div class="col-md-4">
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="approved_date" class="col-sm-4 control-label">Approved Date</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -202,14 +200,14 @@
                                        placeholder="Approved Date">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="ref_R&D" class="col-sm-4 control-label">Ref R&D</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="ref_R&D" value="ref_R&D" v-model="">
                             </div>
                         </div>
 
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="approved_by" class="col-sm-4 control-label">Approved By
                                 Code</label>
                             <div class="col-sm-8">
@@ -224,7 +222,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="height" class="col-sm-4 control-label">Inventory</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -235,7 +233,7 @@
                                        placeholder="Inventory">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="depth" class="col-sm-4 control-label">Qty On Purch Order</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -246,7 +244,7 @@
                                        placeholder="Qty On Purchase Order">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="depth" class="col-sm-4 control-label">Qty On Prod Order</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -257,7 +255,7 @@
                                        placeholder="Qty On Product Order">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="depth" class="col-sm-4 control-label">Qty On Comp Lines</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -268,7 +266,7 @@
                                        placeholder="Qty On Component Lines">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="depth" class="col-sm-4 control-label">Qty On Sales Order</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -279,7 +277,7 @@
                                        placeholder="Qty On Sales Order">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="depth" class="col-sm-4 control-label">Qty On Service Order</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -290,7 +288,7 @@
                                        placeholder="Qty On Service Order">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="approved_by" class="col-sm-4 control-label">Service Item Group</label>
                             <div class="col-sm-8">
                                 <select v-model=""
@@ -304,13 +302,13 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="is_blocked" class="col-sm-4 control-label">Blocked</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="is_blocked" value="is_blocked" v-model="is_blocked">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="depth" class="col-sm-4 control-label">Last Date Modified</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -321,7 +319,7 @@
                                        placeholder="Last Date Modified">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="depth" class="col-sm-4 control-label">Creation Date</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -332,7 +330,7 @@
                                        placeholder="Creation Date">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="depth" class="col-sm-4 control-label">Created By</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -343,60 +341,33 @@
                                        placeholder="Created By">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="is_blocked" class="col-sm-4 control-label">Stockkeeping Unit Exists</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="is_exist" value="is_exist" v-model="is_exist">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="is_blocked" class="col-sm-4 control-label">SKU Item</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="is_sku_item" value="is_sku_item" v-model="is_sku_item">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="is_blocked" class="col-sm-4 control-label">UL Certified</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="is_ul_certified" value="is_ul_certified"
                                        v-model="is_ul_certified">
                             </div>
                         </div>
-                        <div class="form-group form-group-sm">
+                        <div class="form-group">
                             <label for="is_blocked" class="col-sm-4 control-label">ROHS</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="is_rohs" value="is_rohs" v-model="is_rohs">
                             </div>
                         </div>
-
                     </div>
                 </div>
-            </tab>
-            <tab header="Invoicing">
-                Test
-            </tab>
-            <tab header="Replenishment">
-                Test
-            </tab>
-            <tab header="Planning">
-                Test
-            </tab>
-            <tab header="Foreign Trade">
-                Test
-            </tab>
-            <tab header="Item Tracking">
-                Test
-            </tab>
-            <tab header="E-commerce">
-                Test
-            </tab>
-            <tab header="EPD">
-                Test
-            </tab>
-        </tabs>
-        <button type="submit"
-                class="btn btn-primary pull-right"><i class="fa fa-pencil-square-o"></i> Save Item
-        </button>
     </form>
 </template>
 

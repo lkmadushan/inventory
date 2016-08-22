@@ -10,7 +10,7 @@
 					<ul class="nav app-tabs-stacked">
 						<li >
 							<a v-link="{ path: '/inventories/create' }">
-								<i class="fa fa-btn fa-fw fa-lightbulb-o"></i>&nbsp;Create Inventory</span>
+								<i class="fa fa-btn fa-fw fa-lightbulb-o"></i>&nbsp;Create Inventory Item</span>
 							</a>
 						</li>
 						<li >
@@ -20,7 +20,7 @@
 						</li>
 						<li >
 							<a v-link="{ path: '/inventories/verify' }">
-								<i class="fa fa-btn fa-fw fa-thumbs-up"></i>&nbsp;Verification Inventory</span>
+								<i class="fa fa-btn fa-fw fa-thumbs-up"></i>&nbsp;Inventory Verification </span>
 							</a>
 						</li>
 					</ul>

@@ -2,7 +2,7 @@
     <div class="col-md-2">
         <input type="text"
                class="form-control"
-               @keydown="search | debounce 100"
+               @keydown="search | debounce 500"
                v-model="query"
                placeholder="Search">
 

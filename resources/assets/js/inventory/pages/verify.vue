@@ -1,24 +1,24 @@
 <template>
-    <div>
+    <div style="padding-bottom: 50px">
         <div class="row">
             <div class="col-md-12">
                 <form class="form-horizontal" role="form" @submit.prevent="updateStoreAndFindItem">
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="form-group form-group-sm">
                                 <label for="name" class="col-sm-4 control-label">Item</label>
                                 <div class="col-sm-8">
                                     <input autofocus class="form-control" required="required" name="name" type="text" v-model="item.item_no" id="nameInput">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group form-group-sm">
                                 <label for="qty" class="col-sm-4 control-label">Physical Qty</label>
                                 <div class="col-sm-8">
                                     <input class="form-control" required="required" name="qty" type="text" v-model="item.qty">
                                 </div>
                             </div>
                             <button type="submit"
-                                    class="btn btn-primary pull-right"><i class="fa fa-pencil-square-o"></i>Let's See</button>
+                                    class="btn btn-sm btn-primary pull-right"><i class="fa fa-pencil-square-o"></i>&nbsp; View</button>
                         </div>
                     </div>
                 </form>
@@ -27,7 +27,7 @@
     </div>
 
     <div v-show="display">
-        <item-card :callback="verifyInventory" :item="item"></item-card>
+        <verification-card :callback="verifyInventory" :item="item"></verification-card>
     </div>
 
 </template>
@@ -35,7 +35,7 @@
 <script>
     import Search from '../../common/Search.vue';
     import Pagination from '../../common/Pagination.vue';
-    import ItemCard from '../components/ItemCard.vue';
+    import VerificationCard from '../components/VerificationCard.vue';
     import InventoryService from '../../inventory/services/InventoryService';
 
     export default {
@@ -51,7 +51,7 @@
             'tabs': VueStrap.tabset,
             'pagination': Pagination,
             'search': Search,
-            'item-card': ItemCard
+            'verification-card': VerificationCard
         },
 
         methods:{

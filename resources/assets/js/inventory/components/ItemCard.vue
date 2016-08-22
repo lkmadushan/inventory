@@ -4,7 +4,7 @@
             <tab header="General">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="name" class="col-sm-4 control-label">Item No.</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -16,7 +16,7 @@
                                        placeholder="Item no.">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="name" class="col-sm-4 control-label">Name</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -28,7 +28,7 @@
                                        placeholder="Item name">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="description" class="col-sm-4 control-label">Description</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -40,7 +40,7 @@
                                        placeholder="Item Description">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="base_unit_of_measure" class="col-sm-4 control-label">Base
                                 UoM</label>
                             <div class="col-sm-8">
@@ -56,7 +56,7 @@
                                 <!--<span>Selected: {{ selected }}</span>-->
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="width" class="col-sm-4 control-label">Width (mm)</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -66,7 +66,7 @@
                                        placeholder="Width">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="height" class="col-sm-4 control-label">Height (mm)</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -77,7 +77,7 @@
                                        placeholder="Height">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="depth" class="col-sm-4 control-label">Depth (mm)</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -87,7 +87,7 @@
                                        placeholder="Depth">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="color" class="col-sm-4 control-label">Color/Finish</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -101,7 +101,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="item_type" class="col-sm-4 control-label">Item Type</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -111,7 +111,7 @@
                                        placeholder="Item Type">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="main_location" class="col-sm-4 control-label">Main Location</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -125,7 +125,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="rack_no" class="col-sm-4 control-label">Rack No.</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -135,7 +135,7 @@
                                        placeholder="Rack Number">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="shelf_no" class="col-sm-4 control-label">Shelf
                                 No.</label>
                             <div class="col-sm-8">
@@ -146,7 +146,7 @@
                                        placeholder="Shelf Number">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="item_category_code" class="col-sm-4 control-label">Item Category
                                 Code</label>
                             <div class="col-sm-8">
@@ -161,7 +161,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="product_group_code" class="col-sm-4 control-label">Product Group
                                 Code</label>
                             <div class="col-sm-8">
@@ -176,7 +176,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="is_blocked" class="col-sm-4 control-label">SL Item</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="sl" value="sl"
@@ -184,7 +184,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="is_blocked" class="col-sm-4 control-label">Indian Item</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="in" value="in"
@@ -192,7 +192,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="is_blocked" class="col-sm-4 control-label">Poland Item</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="pl" value="pl"
@@ -205,7 +205,7 @@
 
 
                     <div class="col-md-4">
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="approved_date" class="col-sm-4 control-label">Approved Date</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -216,14 +216,14 @@
                                        placeholder="Approved Date">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="ref_R&D" class="col-sm-4 control-label">Ref R&D</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="ref_R&D" value="ref_R&D" v-model="ref_R&D">
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="approved_by" class="col-sm-4 control-label">Approved By
                                 Code</label>
                             <div class="col-sm-8">
@@ -238,7 +238,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="height" class="col-sm-4 control-label">Inventory</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -249,7 +249,7 @@
                                        placeholder="Inventory">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="depth" class="col-sm-4 control-label">Qty On Purch Order</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -260,7 +260,7 @@
                                        placeholder="Qty On Purchase Order">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="depth" class="col-sm-4 control-label">Qty On Prod Order</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -271,7 +271,7 @@
                                        placeholder="Qty On Product Order">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="depth" class="col-sm-4 control-label">Qty On Comp Lines</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -282,7 +282,7 @@
                                        placeholder="Qty On Component Lines">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="depth" class="col-sm-4 control-label">Qty On Sales Order</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -293,7 +293,7 @@
                                        placeholder="Qty On Sales Order">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="depth" class="col-sm-4 control-label">Qty On Service Order</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -304,7 +304,7 @@
                                        placeholder="Qty On Service Order">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="approved_by" class="col-sm-4 control-label">Service Item Group</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -318,13 +318,13 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="is_blocked" class="col-sm-4 control-label">Blocked</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="is_blocked" value="is_blocked" v-model="is_blocked">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="depth" class="col-sm-4 control-label">Last Date Modified</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -335,7 +335,7 @@
                                        placeholder="Last Date Modified">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="depth" class="col-sm-4 control-label">Creation Date</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -347,7 +347,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="depth" class="col-sm-4 control-label">Created By</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -359,21 +359,21 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="is_blocked" class="col-sm-4 control-label">Stockkeeping Unit Exists</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="is_exist" value="is_exist" v-model="is_exist">
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="is_blocked" class="col-sm-4 control-label">SKU Item</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="is_sku_item" value="is_sku_item" v-model="is_sku_item">
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="is_blocked" class="col-sm-4 control-label">UL Certified</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="is_ul_certified" value="is_ul_certified"
@@ -381,7 +381,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="is_blocked" class="col-sm-4 control-label">ROHS</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="is_rohs" value="is_rohs" v-model="is_rohs">
@@ -395,7 +395,7 @@
                 <div class="row">
                     <div class="col-md-4">
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="base_unit_of_measure" class="col-sm-4 control-label">Costing Method</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -410,21 +410,21 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="is_blocked" class="col-sm-4 control-label">Cost Is Adjusted</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="is_adjusted" value="is_adjusted" v-model="is_adjusted">
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="is_blocked" class="col-sm-4 control-label">Cost is posted to G/L</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="is_posted" value="is_posted" v-model="is_posted">
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="base_unit_of_measure" class="col-sm-4 control-label">Standard Cost</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -439,7 +439,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="base_unit_of_measure" class="col-sm-4 control-label">Unit Cost</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -454,7 +454,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="name" class="col-sm-4 control-label">Overhead Rate</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -467,7 +467,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="name" class="col-sm-4 control-label">Indirect Cost %</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -480,7 +480,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="name" class="col-sm-4 control-label">Last Direct Cost</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -493,7 +493,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="base_unit_of_measure" class="col-sm-4 control-label">Price/Profit Calculation</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -508,7 +508,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="name" class="col-sm-4 control-label">Profit %</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -521,7 +521,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="name" class="col-sm-4 control-label">Unit Price</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -538,7 +538,7 @@
 
                     <div class="col-md-4">
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="gen_prod_posting_group" class="col-sm-4 control-label">Gen Prod Posting Group</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -553,7 +553,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="vat_prod_posting_group" class="col-sm-4 control-label">VAT Prod Posting Group</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -568,7 +568,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="inventory_posting_group" class="col-sm-4 control-label">Inventory Posting Group</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -583,7 +583,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="net_invoiced_qty" class="col-sm-4 control-label">Net Invoiced Qty</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -596,14 +596,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="is_allow_invoice_desc" class="col-sm-4 control-label">Allow Invoice Disc</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="is_allow_invoice_desc" value="is_allow_invoice_desc" v-model="is_allow_invoice_desc">
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="item_desc_group" class="col-sm-4 control-label">Item Desc Group</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -618,7 +618,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="sales_unit_of_measure" class="col-sm-4 control-label">Sales Unit Of Measure</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -631,14 +631,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="is_inventory_value_zero" class="col-sm-4 control-label">Inventory Value Zero</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="is_inventory_value_zero" value="is_inventory_value_zero" v-model="is_inventory_value_zero">
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="reserved_qty_on_inv" class="col-sm-4 control-label">Reserved Qty On Inv</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -651,7 +651,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="reserved_qty_on_pur" class="col-sm-4 control-label">Reserved Qty On Pur</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -664,7 +664,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="reserved_qty_on_sale" class="col-sm-4 control-label">Reserved Qty On Sale</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -686,7 +686,7 @@
                 <div class="row">
                     <div class="col-md-4">
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="replenishment_system" class="col-sm-4 control-label">Replenishment System</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -700,7 +700,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="pur_vendor_no" class="col-sm-4 control-label">Pur Vendor No</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -715,7 +715,7 @@
                         </div>
 
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="vendor_item_no" class="col-sm-4 control-label">Vendor Item No</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -728,7 +728,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="pur_unit_of_measure" class="col-sm-4 control-label">Pur Unit Of Measure</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -741,7 +741,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="lead_time_calculation" class="col-sm-4 control-label">Lead Time Calculation</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -758,7 +758,7 @@
 
                     <div class="col-md-4">
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="production_manufactoring_policy" class="col-sm-4 control-label">Prod Manufactoring Policy</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -772,7 +772,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="routing_no" class="col-sm-4 control-label">Routing No</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -786,7 +786,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="production_bom_no" class="col-sm-4 control-label">Production BOM No</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -801,7 +801,7 @@
                         </div>
 
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="rounding_precision" class="col-sm-4 control-label">Rounding Precision</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -814,7 +814,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="flushing_method" class="col-sm-4 control-label">Flushing Method</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -829,7 +829,7 @@
                         </div>
 
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="scrap" class="col-sm-4 control-label">Scrap %</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -842,7 +842,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="lot_size" class="col-sm-4 control-label">Lot Size</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -864,7 +864,7 @@
                 <div class="row">
                     <div class="col-md-4">
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="reordering_policy" class="col-sm-4 control-label">Reordering Policy</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -877,14 +877,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="include_inventory" class="col-sm-4 control-label">Include Inventory</label>
                             <div class="col-sm-8">
                                 <input type="checkbox" id="include_inventory" value="include_inventory" v-model="include_inventory">
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="reserve" class="col-sm-4 control-label">Reserve</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -899,7 +899,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="order_tracking_policy" class="col-sm-4 control-label">Order Tracking Policy</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
@@ -918,7 +918,7 @@
 
                     <div class="col-md-4">
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="reorder_cycle" class="col-sm-4 control-label">Reorder Cycle</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -931,7 +931,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="safety_lead_time" class="col-sm-4 control-label">Safety Lead Time</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -944,7 +944,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="safety_stock_quantity" class="col-sm-4 control-label">Safety Stock Qty</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -957,7 +957,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="reorder_point" class="col-sm-4 control-label">Reorder Point</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -970,7 +970,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="reorder_quantity" class="col-sm-4 control-label">Reorder Qty</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -983,7 +983,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="maximum_inventory" class="col-sm-4 control-label">Maximum Inventory</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -996,7 +996,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="minimum_order_quantity" class="col-sm-4 control-label">Min Order Qty</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -1009,7 +1009,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="maximum_order_quantity" class="col-sm-4 control-label">Max Order Qty</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -1022,7 +1022,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="order_multiple" class="col-sm-4 control-label">Order Multiple</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -1035,7 +1035,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group form-group-sm">
                             <label for="cons_adj_factor" class="col-sm-4 control-label">Cons Adj Factor %</label>
                             <div class="col-sm-8">
                                 <input type="text"
@@ -1056,40 +1056,73 @@
             <tab header="Foreign Trade">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="name" class="col-sm-4 control-label">Item No.</label>
-                            <div class="col-sm-8">
-                                <input type="text"
-                                       class="form-control"
-                                       name="item_no"
-                                       v-model="item.item_no"
-                                       id="item_no"
-                                       required
-                                       placeholder="Item no.">
-                            </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="base_unit_of_measure" class="col-sm-4 control-label">Base
-                                UoM</label>
+                        <div class="form-group form-group-sm">
+                            <label for="tariff_no" class="col-sm-4 control-label">Tariff No</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
                                         class="form-control"
-                                        id="base_unit_of_measure"
-                                        name="base_unit_of_measure"
-                                        placeholder="Base UoM">
-                                    <option selected>EA</option>
-                                    <option>Kg</option>
-                                    <option>Ltr</option>
+                                        id="tariff_no"
+                                        name="tariff_no"
+                                        placeholder="Tariff No">
+                                    <option selected></option>
+                                    <option></option>
+                                    <option></option>
                                 </select>
-                                <!--<span>Selected: {{ selected }}</span>-->
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="is_blocked" class="col-sm-4 control-label">ROHS</label>
+                        <div class="form-group form-group-sm">
+                            <label for="country_of_origin" class="col-sm-4 control-label">Country/Region Of Ori</label>
                             <div class="col-sm-8">
-                                <input type="checkbox" id="is_rohs" value="is_rohs" v-model="is_rohs">
+                                <select v-model="selected"
+                                        class="form-control"
+                                        id="country_of_origin"
+                                        name="country_of_origin"
+                                        placeholder="Country/Region Of Ori">
+                                    <option selected>SPAIN</option>
+                                    <option>UK</option>
+                                    <option>USA</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label for="gross_weight" class="col-sm-4 control-label">Gross Weight</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="gross_weight"
+                                       v-model="gross_weight"
+                                       id="gross_weight"
+                                       required
+                                       placeholder="Gross Weight">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label for="unit_volume" class="col-sm-4 control-label">Unit Volume</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="unit_volume"
+                                       v-model="unit_volume"
+                                       id="unit_volume"
+                                       required
+                                       placeholder="Unit Volume">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label for="barcode" class="col-sm-4 control-label">Barcode</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="barcode"
+                                       v-model="barcode"
+                                       id="barcode"
+                                       required
+                                       placeholder="Barcode">
                             </div>
                         </div>
 
@@ -1099,40 +1132,62 @@
             <tab header="Item Tracking">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="name" class="col-sm-4 control-label">Item No.</label>
-                            <div class="col-sm-8">
-                                <input type="text"
-                                       class="form-control"
-                                       name="item_no"
-                                       v-model="item.item_no"
-                                       id="item_no"
-                                       required
-                                       placeholder="Item no.">
-                            </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="base_unit_of_measure" class="col-sm-4 control-label">Base
-                                UoM</label>
+                        <div class="form-group form-group-sm">
+                            <label for="item_tracking_code" class="col-sm-4 control-label">Item Tracking Code</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
                                         class="form-control"
-                                        id="base_unit_of_measure"
-                                        name="base_unit_of_measure"
-                                        placeholder="Base UoM">
-                                    <option selected>EA</option>
-                                    <option>Kg</option>
-                                    <option>Ltr</option>
+                                        id="item_tracking_code"
+                                        name="item_tracking_code"
+                                        placeholder="Item Tracking Code">
+                                    <option selected>D-XX100</option>
+                                    <option>D-XX101</option>
+                                    <option>D-XX102</option>
                                 </select>
-                                <!--<span>Selected: {{ selected }}</span>-->
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="is_blocked" class="col-sm-4 control-label">ROHS</label>
+                        <div class="form-group form-group-sm form-group form-group-sm-sm">
+                            <label for="serial_no" class="col-sm-4 control-label">Serial Nos</label>
                             <div class="col-sm-8">
-                                <input type="checkbox" id="is_rohs" value="is_rohs" v-model="is_rohs">
+                                <select v-model="selected"
+                                        class="form-control"
+                                        id="serial_no"
+                                        name="serial_no"
+                                        placeholder="Serial Nos">
+                                    <option selected>VARE</option>
+                                    <option>VARE 1</option>
+                                    <option>VARE 2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label for="lot_no" class="col-sm-4 control-label">Lot Nos</label>
+                            <div class="col-sm-8">
+                                <select v-model="selected"
+                                        class="form-control"
+                                        id="lot_no"
+                                        name="lot_no"
+                                        placeholder="Lot Nos">
+                                    <option selected>VARE</option>
+                                    <option>VARE 1</option>
+                                    <option>VARE 2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label for="name" class="col-sm-4 control-label">Expiration Calculation</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="expiration_calculation"
+                                       v-model="expiration_calculation"
+                                       id="expiration_calculation"
+                                       required
+                                       placeholder="Expiration Calculation">
                             </div>
                         </div>
 
@@ -1142,40 +1197,141 @@
             <tab header="E-commerce">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="name" class="col-sm-4 control-label">Item No.</label>
+                        <div class="form-group form-group-sm">
+                            <label for="common_item_no" class="col-sm-4 control-label">Common Item No</label>
                             <div class="col-sm-8">
                                 <input type="text"
                                        class="form-control"
-                                       name="item_no"
-                                       v-model="item.item_no"
-                                       id="item_no"
+                                       name="common_item_no"
+                                       v-model="common_item_no"
+                                       id="common_item_no"
                                        required
-                                       placeholder="Item no.">
+                                       placeholder="Common Item No">
                             </div>
                         </div>
+                    </div>
+                </div>
+            </tab>
+            <tab header="Warehouse">
+                <div class="row">
+                    <div class="col-md-4">
 
-                        <div class="form-group">
-                            <label for="base_unit_of_measure" class="col-sm-4 control-label">Base
-                                UoM</label>
+                        <div class="form-group form-group-sm">
+                            <label for="special_equipment_code" class="col-sm-4 control-label">Special Equipment Code</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
                                         class="form-control"
-                                        id="base_unit_of_measure"
-                                        name="base_unit_of_measure"
-                                        placeholder="Base UoM">
-                                    <option selected>EA</option>
-                                    <option>Kg</option>
-                                    <option>Ltr</option>
+                                        id="special_equipment_code"
+                                        name="special_equipment_code"
+                                        placeholder="Special Equipment Code">
+                                    <option selected></option>
+                                    <option></option>
+                                    <option></option>
                                 </select>
-                                <!--<span>Selected: {{ selected }}</span>-->
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="is_blocked" class="col-sm-4 control-label">ROHS</label>
+                        <div class="form-group form-group-sm">
+                            <label for="putaway_template_code" class="col-sm-4 control-label">Put-away Template Code</label>
                             <div class="col-sm-8">
-                                <input type="checkbox" id="is_rohs" value="is_rohs" v-model="is_rohs">
+                                <select v-model="selected"
+                                        class="form-control"
+                                        id="putaway_template_code"
+                                        name="putaway_template_code"
+                                        placeholder="Put-away Template Code">
+                                    <option selected></option>
+                                    <option></option>
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label for="putaway_unit_of_meas" class="col-sm-4 control-label">Put-away Unit Of Meas</label>
+                            <div class="col-sm-8">
+                                <select v-model="selected"
+                                        class="form-control"
+                                        id="putaway_unit_of_meas"
+                                        name="putaway_unit_of_meas"
+                                        placeholder="Put-away Unit Of Meas">
+                                    <option selected>EA</option>
+                                    <option></option>
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label for="phys_invt_counting_pe" class="col-sm-4 control-label">Phys Invt Counting Pe</label>
+                            <div class="col-sm-8">
+                                <select v-model="selected"
+                                        class="form-control"
+                                        id="phys_invt_counting_pe"
+                                        name="phys_invt_counting_pe"
+                                        placeholder="Phys Invt Counting Pe">
+                                    <option selected></option>
+                                    <option></option>
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label for="last_phys_invt_date" class="col-sm-4 control-label">Last Phys Invt Date</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="last_phys_invt_date"
+                                       v-model="last_phys_invt_date"
+                                       id="last_phys_invt_date"
+                                       required
+                                       placeholder="Last Phys Invt Date">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label for="last_counting_period_u" class="col-sm-4 control-label">Last Counting Period U</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="last_counting_period_u"
+                                       v-model="last_counting_period_u"
+                                       id="last_counting_period_u"
+                                       required
+                                       placeholder="Last Counting Period U">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label for="next_counting_period_u" class="col-sm-4 control-label">Next Counting Period U</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="next_counting_period_u"
+                                       v-model="next_counting_period_u"
+                                       id="next_counting_period_u"
+                                       required
+                                       placeholder="Next Counting Period U">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label for="identifier_code" class="col-sm-4 control-label">Identifier Code</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="identifier_code"
+                                       v-model="identifier_code"
+                                       id="identifier_code"
+                                       required
+                                       placeholder="Identifier Code">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label for="use_cross_docking" class="col-sm-4 control-label">Use Cross Docking</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" id="use_cross_docking" value="use_cross_docking" v-model="use_cross_docking">
                             </div>
                         </div>
 
@@ -1185,44 +1341,94 @@
             <tab header="EPD">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="name" class="col-sm-4 control-label">Item No.</label>
-                            <div class="col-sm-8">
-                                <input type="text"
-                                       class="form-control"
-                                       name="item_no"
-                                       v-model="item.item_no"
-                                       id="item_no"
-                                       required
-                                       placeholder="Item no.">
-                            </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="base_unit_of_measure" class="col-sm-4 control-label">Base
-                                UoM</label>
+                        <div class="form-group form-group-sm">
+                            <label for="version" class="col-sm-4 control-label">Version</label>
                             <div class="col-sm-8">
                                 <select v-model="selected"
                                         class="form-control"
-                                        id="base_unit_of_measure"
-                                        name="base_unit_of_measure"
-                                        placeholder="Base UoM">
-                                    <option selected>EA</option>
-                                    <option>Kg</option>
-                                    <option>Ltr</option>
+                                        id="version"
+                                        name="version"
+                                        placeholder="Version">
+                                    <option selected>v1</option>
+                                    <option>v2</option>
+                                    <option>v3</option>
                                 </select>
-                                <!--<span>Selected: {{ selected }}</span>-->
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="is_blocked" class="col-sm-4 control-label">ROHS</label>
+                        <div class="form-group form-group-sm">
+                            <label for="to_accessory_list" class="col-sm-4 control-label">To Accessory List</label>
                             <div class="col-sm-8">
-                                <input type="checkbox" id="is_rohs" value="is_rohs" v-model="is_rohs">
+                                <input type="checkbox" id="to_accessory_list" value="to_accessory_list" v-model="to_accessory_list">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label for="catalog_page" class="col-sm-4 control-label">Catalog Page</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="catalog_page"
+                                       v-model="catalog_page"
+                                       id="catalog_page"
+                                       required
+                                       placeholder="Catalog Page">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label for="net_weight" class="col-sm-4 control-label">Net Weight</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="net_weight"
+                                       v-model="net_weight"
+                                       id="net_weight"
+                                       required
+                                       placeholder="Net Weight">
                             </div>
                         </div>
 
                     </div>
+
+                    <div class="col-md-4">
+
+                        <div class="form-group form-group-sm">
+                            <label for="assembly_time" class="col-sm-4 control-label">Assembly Time</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="assembly_time"
+                                       v-model="assembly_time"
+                                       id="assembly_time"
+                                       required
+                                       placeholder="Assembly Time">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label for="units_per_parcel" class="col-sm-4 control-label">Units Per Parcel</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       name="units_per_parcel"
+                                       v-model="units_per_parcel"
+                                       id="units_per_parcel"
+                                       required
+                                       placeholder="Units Per Parcel">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label for="add_to_epd" class="col-sm-4 control-label">Add To EPD</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" id="add_to_epd" value="add_to_epd" v-model="add_to_epd">
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
             </tab>
         </tabs>

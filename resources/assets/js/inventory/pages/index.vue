@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<search :query.sync="query" :callback="fetchInventories"></search>
-		<table class="table table-hover">
+		<table class="table table-hover table-condensed">
 			<thead>
 			<tr>
 				<th>Item No</th>

@@ -13,4 +13,18 @@ export default class {
             .get('/api/v1/inventories/' + id)
             .then(response => response.json());
     }
+    
+    static store(data){
+        return Vue.http
+            .post('/api/v1/inventories',data )
+            .then(response => response.json());
+    }
+
+    static verifyStock(data){
+        // return Vue.http
+        //     .post('/api/v1/inventories/verify',data )
+        //     .then(response => response.json());
+    }
+    
+
 }

@@ -14,10 +14,13 @@ var routes = {
                         component: require('./inventory/pages/show.vue')
                     },
                     '/create': {
-                        component: require('./inventory/pages/show.vue')
+                        component: require('./inventory/pages/create.vue')
                     },
                     '/verify': {
                         component: require('./inventory/pages/verify.vue')
+                    },
+                    '/store': {
+                        component: require('./inventory/pages/show.vue')
                     }
                 }
             },

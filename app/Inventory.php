@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Inventory extends Model
 {
+    use Filterable;
+
     protected $perPage = 20;
 
     protected $fillable = [

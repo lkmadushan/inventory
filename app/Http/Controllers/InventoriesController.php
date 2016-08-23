@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\InventoryRequest;
 use App\Inventory;
+use App\InventoryFilters;
 
 class InventoriesController extends Controller
 {
-    public function index()
+    public function index(InventoryFilters $filters)
     {
-        $query = request('query');
-
-        $inventories = Inventory::where('name', 'LIKE', "{$query}%")->latest()->paginate();
+        $inventories = Inventory::filter($filters)->latest()->paginate();
 
         return response()->json($inventories->toArray());
     }

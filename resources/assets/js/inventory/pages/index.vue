@@ -34,7 +34,7 @@
 		data() {
 			return {
 				inventories: {},
-				query: ''
+				query: {}
 			}
 		},
 
@@ -46,10 +46,8 @@
 
 		methods: {
 			fetchInventories(page = 1) {
-				var params = {
-					page: page,
-					query: this.query
-				};
+				var params = this.query;
+				params.page = page;
 
 				InventoryService.take(params).then((data) => {
 					this.$set('inventories', data);

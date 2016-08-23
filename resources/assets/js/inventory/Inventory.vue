@@ -23,6 +23,11 @@
 								<i class="fa fa-btn fa-fw fa-thumbs-up"></i>&nbsp;Inventory Verification</span>
 							</a>
 						</li>
+						<li >
+							<a v-link="{ path: '/inventories/verify' }">
+								<i class="fa fa-btn fa-fw fa-thumbs-up"></i>&nbsp;Inventory Verification</span>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>

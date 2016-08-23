@@ -10,22 +10,22 @@
 					<ul class="nav app-tabs-stacked">
 						<li >
 							<a v-link="{ path: '/inventories/create' }">
-								<i class="fa fa-btn fa-fw fa-lightbulb-o"></i>&nbsp;Create Inventory Item</span>
+								<i class="fa fa-btn fa-fw fa-lightbulb-o"></i>Create Inventory Item</span>
 							</a>
 						</li>
 						<li >
 							<a v-link="{ path: '/inventories' }">
-								<i class="fa fa-btn fa-fw fa-list"></i>&nbsp;View Inventory</span>
+								<i class="fa fa-btn fa-fw fa-list"></i>View Inventory</span>
 							</a>
 						</li>
 						<li >
 							<a v-link="{ path: '/inventories/verify' }">
-								<i class="fa fa-btn fa-fw fa-thumbs-up"></i>&nbsp;Inventory Verification</span>
+								<i class="fa fa-btn fa-fw fa-thumbs-up"></i>Inventory Verification</span>
 							</a>
 						</li>
 						<li >
-							<a v-link="{ path: '/inventories/verify' }">
-								<i class="fa fa-btn fa-fw fa-thumbs-up"></i>&nbsp;Inventory Verification</span>
+							<a v-link="{ path: '/inventories/dispatch' }">
+								<i class="fa fa-btn fa-fw fa-reply"></i>&nbsp;Inventory Dispatch</span>
 							</a>
 						</li>
 					</ul>

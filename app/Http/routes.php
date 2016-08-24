@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => 'api/v1'], function() {
+Route::group(['prefix' => 'api/v1', 'middleware' => 'auth'], function() {
 
     Route::get('/inventories', 'InventoriesController@index');
     Route::get('/inventories/{item}', 'InventoriesController@show');
@@ -12,4 +12,6 @@ Route::group(['prefix' => 'api/v1'], function() {
 
 });
 
-Route::get('/{vue?}', 'HomeController@show')->where('vue', '.*');
+Route::auth();
+
+Route::get('/{vue?}', 'HomeController@show')->where('vue', '.*')->middleware('auth');

@@ -11,9 +11,7 @@
     }
 </script>
 <body>
-<div id="app">
-    <router-view></router-view>
-</div>
+    @yield('content')
 <script src="{{ url('js/app.js') }}"></script>
 </body>
 </html>

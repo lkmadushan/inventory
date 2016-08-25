@@ -14,6 +14,15 @@ class Inventory extends Model
         'item_no', 'name', 'description', 'quantity'
     ];
 
+    public static function verifyStock($data)
+    {
+        $item =  static::byItemNo($data['item_no'])->first();
+
+        $data['system_stock'] = $item->quantity;
+
+        return $item->physicalStocks()->create($data);
+    }
+
     public function getRouteKeyName()
     {
         return 'item_no';
@@ -24,12 +33,8 @@ class Inventory extends Model
         return $this->hasMany(InventoryVerification::class, 'item_no', 'item_no');
     }
 
-    public function savePhysicalStock($pysicalStock)
+    public function scopeByItemNo($query, $itemNo)
     {
-        return $this->physicalStocks()->create([
-            'item_no' => $this->item_no,
-            'system_stock' => $this->quantity,
-            'physical_stock' => $pysicalStock
-        ]);
+        return $query->where('item_no', $itemNo);
     }
 }

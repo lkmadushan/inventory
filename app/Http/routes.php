@@ -6,8 +6,8 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'auth'], function() {
     Route::get('/inventories/{item}', 'InventoriesController@show');
     Route::post('/inventories','InventoriesController@store');
 
-    Route::get('/inventories/verification','InventoriesController@index');
-    Route::post('/inventories/verify/{item}', 'InventoryVerificationController@store');
+    Route::get('/verifications','InventoryVerificationController@index');
+    Route::post('/verifications', 'InventoryVerificationController@store');
     
 
 });

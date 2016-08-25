@@ -5,9 +5,8 @@ namespace App\Http\Requests;
 class InventoryRequest extends Request
 {
     protected $rules = [
-        'item_no'       => 'required|unique:inventories,item_no',
-        'name'          => 'required',
-        'description'   => 'required',
+        'barcode'  => 'required',
+        'quantity' => 'required',
     ];
 
     /**
@@ -27,13 +26,6 @@ class InventoryRequest extends Request
      */
     public function rules()
     {
-        return $this->requestValidationRules();
-    }
-
-    protected function updateRules()
-    {
-        return array_merge($this->rules,  [
-            'item_no' => "required|unique:inventories,item_no,{$this->route('inventory')->id},id",
-        ]);
+        return $this->rules;
     }
 }

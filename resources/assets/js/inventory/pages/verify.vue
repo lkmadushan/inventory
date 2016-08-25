@@ -2,23 +2,23 @@
     <div>
         <div class="row">
             <div class="col-md-12">
-                <form class="form-horizontal" role="form" @submit.prevent="updateStoreAndFindItem">
+                <form class="form-horizontal" role="form" @submit.prevent="verifyInventory">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group form-group-sm">
-                                <label for="name" class="col-sm-4 control-label">Item</label>
+                                <label for="barcode" class="col-sm-4 control-label">Item</label>
                                 <div class="col-sm-8">
-                                    <input autofocus class="form-control" required="required" name="name" type="text" v-model="item.item_no" id="nameInput">
+                                    <input autofocus class="form-control" id="barcode" required="required" name="barcode" type="text" v-model="item.barcode" id="nameInput">
                                 </div>
                             </div>
                             <div class="form-group form-group-sm">
-                                <label for="qty" class="col-sm-4 control-label">Physical Qty</label>
+                                <label for="quantity" class="col-sm-4 control-label">Physical quantity</label>
                                 <div class="col-sm-8">
-                                    <input class="form-control" required="required" name="qty" type="text" v-model="item.qty">
+                                    <input class="form-control" id="quantity" required="required" name="quantity" type="text" v-model="item.quantity">
                                 </div>
                             </div>
                             <button type="submit"
-                                    class="btn btn-sm btn-primary pull-right"><i class="fa fa-pencil-square-o"></i>&nbsp; View</button>
+                                    class="btn btn-sm btn-primary pull-right"><i class="fa fa-pencil-square-o"></i>&nbsp; Verify</button>
                         </div>
                     </div>
                 </form>
@@ -27,13 +27,12 @@
     </div>
 
     <div v-show="display">
-        <verification-list></verification-list>
+        <verification-list :list="verifications"></verification-list>
     </div>
 
 </template>
 
 <script>
-    import Search from '../../common/Search.vue';
     import Pagination from '../../common/Pagination.vue';
     import VerificationList from '../components/VerificationList.vue';
     import InventoryService from '../../inventory/services/InventoryService';
@@ -41,7 +40,11 @@
     export default {
         data() {
             return {
-                item: {},
+                item: {
+                    barcode: '',
+                    quantity: ''
+                },
+                verifications: [],
                 display: false
             }
         },
@@ -50,22 +53,33 @@
             'tab': VueStrap.tab,
             'tabs': VueStrap.tabset,
             'pagination': Pagination,
-            'search': Search,
             'verification-list': VerificationList
         },
 
-        methods:{
-            verifyInventory(data){
-                InventoryService.store(data).then(response => console.log(response));
+        created() {
+            this.fetchTodayVerfications();
+
+            Vue.nextTick(function() {
+                $('#barcode').focus();
+            });
+        },
+
+        methods: {
+            verifyInventory() {
+                InventoryService.verifyStock(this.item).then(() => {
+                    this.fetchTodayVerfications();
+                    this.item.barcode = '';
+                    this.item.quantity = '';
+                    $('#barcode').focus();
+                });
             },
 
-            updateStoreAndFindItem() {
-                Promise.all([
-                    InventoryService.verifyStock(this.item),
-                    InventoryService.find(this.item.item_no)
-                ]).then(([a, b]) => {
-                    this.display = true,
-                    this.$set('item', b);
+            fetchTodayVerfications() {
+                return InventoryService.verificationList().then(data => {
+                    if(data.length) {
+                        this.display = true;
+                        this.$set('verifications', data);
+                    }
                 });
             }
         }

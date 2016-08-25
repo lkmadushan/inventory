@@ -15,6 +15,9 @@ class CreateInventoryVerificationsTable extends Migration
         Schema::create('inventory_verifications', function (Blueprint $table) {
             $table->increments('id');
             $table->string('item_no');
+            $table->string('location');
+            $table->string('rack_no');
+            $table->string('shelf_no');
             $table->decimal('system_stock');
             $table->decimal('physical_stock');
             $table->timestamps();

@@ -1,0 +1,15 @@
+<template>
+    <hr>
+    <table>
+        <thead>
+        <tr>
+            <th>Test</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Test</td>
+        </tr>
+        </tbody>
+    </table>
+</template>

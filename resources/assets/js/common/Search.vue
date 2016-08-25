@@ -1,21 +1,19 @@
 <template>
-
-    <div class="col-md-2">
-        <input type="text"
-               class="form-control"
-               @keydown="search | debounce 500"
-               v-model="string"
-               placeholder="Search">
-
+    <div class="row">
+        <div class="col-sm-3">
+            <input type="text"
+                   class="form-control"
+                   @keydown="search | debounce 500"
+                   v-model="string"
+                   placeholder="Search">
+        </div>
+        <div class="col-sm-3">
+            <select @change="search" class="form-control" v-model="type">
+                <option value="5">Option 1</option>
+                <option value="10">Optiob 2</option>
+            </select>
+        </div>
     </div>
-
-    <div class="col-md-2">
-        <select @change="search" class="form-control" v-model="type">
-            <option value="5">Option 1</option>
-            <option value="10">Optiob 2</option>
-        </select>
-    </div>
-
 </template>
 
 <script>

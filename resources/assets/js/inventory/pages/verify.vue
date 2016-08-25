@@ -27,7 +27,7 @@
     </div>
 
     <div v-show="display">
-        <verification-card :callback="verifyInventory" :item="item"></verification-card>
+        <verification-list></verification-list>
     </div>
 
 </template>
@@ -35,7 +35,7 @@
 <script>
     import Search from '../../common/Search.vue';
     import Pagination from '../../common/Pagination.vue';
-    import VerificationCard from '../components/VerificationCard.vue';
+    import VerificationList from '../components/VerificationList.vue';
     import InventoryService from '../../inventory/services/InventoryService';
 
     export default {
@@ -51,7 +51,7 @@
             'tabs': VueStrap.tabset,
             'pagination': Pagination,
             'search': Search,
-            'verification-card': VerificationCard
+            'verification-list': VerificationList
         },
 
         methods:{

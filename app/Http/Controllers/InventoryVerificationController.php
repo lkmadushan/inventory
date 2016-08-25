@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Inventory;
-use App\Http\Requests\InventoryRequest;
+use Illuminate\Http\Request;
 use App\InventoryVerification;
+use App\Http\Requests\InventoryRequest;
 
 class InventoryVerificationController extends Controller
 {
@@ -17,12 +18,15 @@ class InventoryVerificationController extends Controller
 
     public function store(InventoryRequest $request)
     {
-        $data = collect(['item_no', 'location', 'rack_no', 'shelf_no'])
-            ->combine(explode('\\', $request->get('barcode')))
-            ->put('physical_stock', $request->get('quantity'));
-
-        Inventory::verifyStock($data->all());
+        Inventory::verifyStock($this->normalizeData($request));
 
         return response(['status' => 'success'], 201);
+    }
+
+    private function normalizeData(Request $request)
+    {
+        return collect(['item_no', 'location', 'rack_no', 'shelf_no'])
+            ->combine(explode('\\', $request->get('barcode')))
+            ->put('physical_stock', $request->get('quantity'));
     }
 }

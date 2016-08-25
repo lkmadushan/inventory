@@ -11,7 +11,8 @@
     }
 </script>
 <body>
-    @yield('content')
-<script src="{{ url('js/app.js') }}"></script>
+@yield('content')
+
+@yield('scripts')
 </body>
 </html>

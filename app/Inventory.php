@@ -18,9 +18,9 @@ class Inventory extends Model
     {
         $item =  static::byItemNo($data['item_no'])->first();
 
-        $data['system_stock'] = $item->quantity;
-
-        return $item->physicalStocks()->create($data);
+        return $item->physicalStocks()->create(
+            array_merge($data, ['system_stock' => $item->quantity])
+        );
     }
 
     public function getRouteKeyName()

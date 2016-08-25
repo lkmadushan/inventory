@@ -5,3 +5,7 @@
         <router-view></router-view>
     </div>
 @endsection
+
+@section('scripts')
+    <script src="{{ url('js/app.js') }}"></script>
+@endsection

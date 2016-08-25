@@ -27,6 +27,7 @@ class InventoryVerificationController extends Controller
     {
         return collect(['item_no', 'location', 'rack_no', 'shelf_no'])
             ->combine(explode('\\', $request->get('barcode')))
-            ->put('physical_stock', $request->get('quantity'));
+            ->put('physical_stock', $request->get('quantity'))
+            ->all();
     }
 }

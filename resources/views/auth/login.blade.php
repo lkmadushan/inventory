@@ -4,6 +4,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <div class="text-center">
+                <img style="margin-bottom: 25px" src="{{ url('/images/logo.png') }}" alt="Elsteel PVT Ltd">
+                <br>
+            </div>
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">

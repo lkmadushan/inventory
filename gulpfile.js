@@ -14,16 +14,14 @@ elixir.config.js.browserify.watchify.options.poll = true;
  |
  */
 
+//This is the place, we should put our files to be copied to our directory. We 'gulp' to execute this
 elixir(function(mix) {
-    
-    //This is the place, we should put our files to be copied to our directory. We 'gulp' to execute this
-    
-    //
     mix.sass('app.scss');
     
-    //We copy fonts and font-awesome files 
+    // We copy fonts and font-awesome files
     mix.copy('./node_modules/font-awesome/fonts', './public/fonts');
     mix.copy('./node_modules/bootstrap-sass/assets/fonts/bootstrap', './public/fonts/bootstrap');
+    mix.copy('./resources/assets/images', './public/images');
 
     mix.browserify('app.js');
 });

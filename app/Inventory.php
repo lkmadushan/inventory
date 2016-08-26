@@ -19,7 +19,10 @@ class Inventory extends Model
         $item =  static::byItemNo($data['item_no'])->first();
 
         return $item->physicalStocks()->create(
-            array_merge($data, ['system_stock' => $item->quantity])
+            array_merge([
+                'system_stock' => $item->quantity,
+                'verified_by' => auth()->user()->id
+            ], $data)
         );
     }
 

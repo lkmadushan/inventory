@@ -20,6 +20,7 @@ class CreateInventoryVerificationsTable extends Migration
             $table->string('shelf_no');
             $table->decimal('system_stock');
             $table->decimal('physical_stock');
+            $table->integer('verified_by');
             $table->timestamps();
         });
     }

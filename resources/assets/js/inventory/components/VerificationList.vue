@@ -11,12 +11,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="item in list">
-            <td>{{ item.item_no }}</td>
-            <td>{{ item.location }}</td>
-            <td>{{ item.rack_no }}</td>
-            <td>{{ item.shelf_no }}</td>
-            <td>{{ item.physical_stock }}</td>
+        <tr v-for="verification in list">
+            <td>{{ verification.item_no }} - {{ verification.item.name }}</td>
+            <td>{{ verification.location.location }}</td>
+            <td>{{ verification.rack_no }}</td>
+            <td>{{ verification.shelf_no }}</td>
+            <td>{{ verification.physical_stock }}</td>
         </tr>
         </tbody>
     </table>

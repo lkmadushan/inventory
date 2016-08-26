@@ -17,4 +17,14 @@ class InventoryVerification extends Model
 
         return $query->whereRaw("DATE(created_at) = '{$date}'");
     }
+
+    public function location()
+    {
+        return $this->belongsTo(Location::class, 'location', 'location_id');
+    }
+
+    public function item()
+    {
+        return $this->belongsTo(Inventory::class, 'item_no', 'item_no');
+    }
 }

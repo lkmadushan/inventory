@@ -19,9 +19,9 @@ class InventoriesController extends Controller
         return response()->json($item->toArray());
     }
 
-    public function store(InventoryRequest $request)
+    public function store()
     {
-        return Inventory::create($request->only(['item_no', 'name','description']));
+        return Inventory::create(request()->only(['item_no', 'name','description']));
     }
     
 }

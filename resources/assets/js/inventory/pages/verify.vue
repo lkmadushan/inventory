@@ -2,19 +2,19 @@
     <div>
         <div class="row">
             <div class="col-md-12">
-                <form class="form-horizontal" role="form" @submit.prevent="verifyInventory">
+                <form class="form-horizontal" role="form" @submit.prevent="verifyInventory" method="POST">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group form-group-sm">
                                 <label for="barcode" class="col-sm-4 control-label">Item</label>
                                 <div class="col-sm-8">
-                                    <input autofocus class="form-control" id="barcode" required="required" name="barcode" type="text" v-model="item.barcode" id="nameInput">
+                                    <input autofocus class="form-control" id="barcode" required="required" type="text" v-model="item.barcode" id="nameInput">
                                 </div>
                             </div>
                             <div class="form-group form-group-sm">
                                 <label for="quantity" class="col-sm-4 control-label">Physical quantity</label>
                                 <div class="col-sm-8">
-                                    <input class="form-control" id="quantity" required="required" name="quantity" type="text" v-model="item.quantity">
+                                    <input class="form-control" id="quantity" required="required" type="text" v-model="item.quantity">
                                 </div>
                             </div>
                             <button type="submit"
@@ -68,10 +68,10 @@
             verifyInventory() {
                 InventoryService.verifyStock(this.item).then(() => {
                     this.fetchTodayVerfications();
-                    this.item.barcode = '';
-                    this.item.quantity = '';
-                    $('#barcode').focus();
                 });
+
+                $('#quantity').val('');
+                $('#barcode').val('').focus();
             },
 
             fetchTodayVerfications() {

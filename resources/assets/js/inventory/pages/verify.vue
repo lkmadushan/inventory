@@ -27,7 +27,7 @@
                                     class="btn btn-sm btn-primary pull-right"><i class="fa fa-pencil-square-o"></i>&nbsp; Verify</button>
                         </div>
                         <div class="col-sm-8">
-                            <p v-show="serverItem.name" class="help-block"><strong>Description:</strong>&nbsp;&nbsp; {{ serverItem.name }}</p>
+                            <p v-show="serverItem.name" class="help-block"><strong>Name:</strong>&nbsp;&nbsp; {{ serverItem.name }}</p>
                         </div>
                     </div>
                 </form>

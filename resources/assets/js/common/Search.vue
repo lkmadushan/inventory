@@ -7,12 +7,12 @@
                    v-model="string"
                    placeholder="Search">
         </div>
-        <div class="col-sm-3">
-            <select @change="search" class="form-control" v-model="type">
-                <option value="5">Option 1</option>
-                <option value="10">Optiob 2</option>
-            </select>
-        </div>
+        <!--<div class="col-sm-3">-->
+            <!--<select @change="search" class="form-control" v-model="type">-->
+                <!--<option value="5">Option 1</option>-->
+                <!--<option value="10">Optiob 2</option>-->
+            <!--</select>-->
+        <!--</div>-->
     </div>
 </template>
 

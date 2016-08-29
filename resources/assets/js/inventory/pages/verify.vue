@@ -6,9 +6,15 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group form-group-sm">
-                                <label for="barcode" class="col-sm-4 control-label">Item</label>
+                                <label for="barcode" class="col-sm-4 control-label">Barcode</label>
                                 <div class="col-sm-8">
-                                    <input autofocus class="form-control" id="barcode" required="required" type="text" v-model="item.barcode" id="nameInput">
+                                    <input autofocus
+                                           class="form-control"
+                                           id="barcode"
+                                           required="required"
+                                           type="text"
+                                           @keyup="fetchItem | debounce 500"
+                                           v-model="item.barcode">
                                 </div>
                             </div>
                             <div class="form-group form-group-sm">
@@ -19,6 +25,9 @@
                             </div>
                             <button type="submit"
                                     class="btn btn-sm btn-primary pull-right"><i class="fa fa-pencil-square-o"></i>&nbsp; Verify</button>
+                        </div>
+                        <div class="col-sm-8">
+                            <p v-show="serverItem.name" class="help-block"><strong>Description:</strong>&nbsp;&nbsp; {{ serverItem.name }}</p>
                         </div>
                     </div>
                 </form>
@@ -44,8 +53,11 @@
                     barcode: '',
                     quantity: ''
                 },
+                serverItem: {
+                    name: ''
+                },
                 verifications: [],
-                display: false
+                display: false,
             }
         },
 
@@ -80,6 +92,14 @@
                         this.display = true;
                         this.$set('verifications', data);
                     }
+                });
+            },
+
+            fetchItem() {
+                var id = this.item.barcode.split('\\')[0];
+
+                return InventoryService.find(id).then(data => {
+                    this.$set('serverItem', data);
                 });
             }
         }

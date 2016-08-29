@@ -6,7 +6,7 @@ class InventoryRequest extends Request
 {
     protected $rules = [
         'barcode'  => 'required',
-        'quantity' => 'required',
+        'quantity' => 'required|numeric',
     ];
 
     /**

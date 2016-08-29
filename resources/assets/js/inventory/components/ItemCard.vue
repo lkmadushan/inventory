@@ -49,7 +49,6 @@
                                     <option>Kg</option>
                                     <option>Ltr</option>
                                 </select>
-                                <!--<span>Selected: {{ selected }}</span>-->
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
@@ -1263,6 +1262,7 @@
 
 <script>
     export default {
+
         props: {
             callback: {
                 type: Function,

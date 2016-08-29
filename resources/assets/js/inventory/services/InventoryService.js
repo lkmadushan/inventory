@@ -31,4 +31,10 @@ export default class {
             .get('/api/v1/verifications')
             .then(response => response.json());
     }
+
+    static findColour(id) {
+        return Vue.http
+            .get('/api/v1/colours/' + id)
+            .then(response => response.json());
+    }
 }

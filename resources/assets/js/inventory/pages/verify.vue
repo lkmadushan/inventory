@@ -28,6 +28,9 @@
                         </div>
                         <div class="col-sm-8">
                             <p v-show="serverItem.name" class="help-block"><strong>Name:</strong>&nbsp;&nbsp; {{ serverItem.name }}</p>
+                            <p v-show="colour.hex_no" class="help-block"><strong>Colour:</strong>&nbsp;&nbsp;
+                                <span class="circle" :style="{ background: colour.hex_no }">&nbsp;</span>
+                            </p>
                         </div>
                     </div>
                 </form>
@@ -40,6 +43,16 @@
     </div>
 
 </template>
+
+<style>
+    .circle {
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+</style>
 
 <script>
     import Pagination from '../../common/Pagination.vue';
@@ -55,6 +68,10 @@
                 },
                 serverItem: {
                     name: ''
+                },
+                colour: {
+                    ral_no: '',
+                    hex_no: ''
                 },
                 verifications: [],
                 display: false,
@@ -96,7 +113,17 @@
             },
 
             fetchItem() {
-                var id = this.item.barcode.split('\\')[0];
+                var data = this.item.barcode.split('\\');
+
+                if (data.length == 5) {
+                    return Promise.all([
+                        InventoryService.find(data[0]),
+                        InventoryService.findColour(data[4])
+                    ]).then(([item, colour]) => {
+                        this.$set('serverItem', item);
+                        this.$set('colour', colour);
+                    });
+                }
 
                 return InventoryService.find(id).then(data => {
                     this.$set('serverItem', data);

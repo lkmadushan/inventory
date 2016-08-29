@@ -19,6 +19,7 @@ class CreateInventoryVerificationsTable extends Migration
             $table->string('location');
             $table->string('rack_no');
             $table->string('shelf_no');
+            $table->string('colour_id');
             $table->decimal('system_stock');
             $table->decimal('physical_stock');
             $table->integer('verified_by');

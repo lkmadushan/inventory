@@ -25,9 +25,16 @@ class InventoryVerificationController extends Controller
 
     private function normalizeData(Request $request)
     {
-        return collect(['item_no', 'location', 'rack_no', 'shelf_no'])
-            ->combine(explode('\\', $request->get('barcode')))
+        $payload = explode('\\', $request->get('barcode'));
+
+        $columns = ['item_no', 'location', 'rack_no', 'shelf_no'];
+
+        if (count($payload) == 5) array_push($columns, 'colour_id');
+
+        return collect($columns)
+            ->combine($payload)
             ->put('physical_stock', $request->get('quantity'))
+            ->put('barcode', $request->get('barcode'))
             ->all();
     }
 }

@@ -27,4 +27,9 @@ class InventoryVerification extends Model
     {
         return $this->belongsTo(Inventory::class, 'item_no', 'item_no');
     }
+
+    public function colour()
+    {
+        return $this->belongsTo(Colour::class, 'colour_id', 'colour_id');
+    }
 }

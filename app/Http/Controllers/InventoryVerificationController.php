@@ -11,7 +11,7 @@ class InventoryVerificationController extends Controller
 {
     public function index()
     {
-        $verifications = InventoryVerification::with('item', 'location')->today()->get();
+        $verifications = InventoryVerification::with('item', 'location', 'colour')->today()->get();
 
         return response()->json($verifications->toArray());
     }

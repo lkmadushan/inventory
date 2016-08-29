@@ -13,7 +13,8 @@
         <tbody>
         <tr v-for="verification in list">
             <td>{{ verification.item_no }} - {{ verification.item.name }}</td>
-            <td>{{ verification.location.location }}</td>
+            <td>{{ verification.location ? verification.location.location : 'N/A' }}</td>
+            <td>{{ verification.colour ? verification.colour.ral_no : 'N/A' }}</td>
             <td>{{ verification.rack_no }}</td>
             <td>{{ verification.shelf_no }}</td>
             <td>{{ verification.physical_stock }}</td>

@@ -23,11 +23,11 @@
 								<i class="fa fa-btn fa-fw fa-thumbs-up"></i>Inventory Verification</span>
 							</a>
 						</li>
-						<li >
-							<a v-link="{ path: '/inventories/dispatch' }">
-								<i class="fa fa-btn fa-fw fa-reply"></i>&nbsp;Inventory Dispatch</span>
-							</a>
-						</li>
+						<!--<li >-->
+							<!--<a v-link="{ path: '/inventories/dispatch' }">-->
+								<!--<i class="fa fa-btn fa-fw fa-reply"></i>&nbsp;Inventory Dispatch</span>-->
+							<!--</a>-->
+						<!--</li>-->
 					</ul>
 				</div>
 			</div>

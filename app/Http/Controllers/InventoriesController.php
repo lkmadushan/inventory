@@ -19,7 +19,7 @@ class InventoriesController extends Controller
         if (preg_match('/^B_EL\d+$/', $item)) {
             $item = Inventory::where('bc_no', $item)->first();
         } else {
-            $item = Inventory::find($item);
+            $item = Inventory::where('item_no', $item)->first();
         }
 
         return response()->json($item->toArray());

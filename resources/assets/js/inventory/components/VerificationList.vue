@@ -5,6 +5,7 @@
         <tr>
             <th>Item no.</th>
             <th>Location</th>
+            <th>Colour</th>
             <th>Rack no.</th>
             <th>Shelf no.</th>
             <th>Physical stock</th>

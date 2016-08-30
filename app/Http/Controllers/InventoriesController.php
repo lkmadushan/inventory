@@ -16,7 +16,7 @@ class InventoriesController extends Controller
 
     public function show($item)
     {
-        if (preg_match('/^#\d+$/', $item)) {
+        if (preg_match('/^@\d+$/', $item)) {
             $item = Inventory::where('bc_no', $item)->first();
         } else {
             $item = Inventory::where('item_no', $item)->first();

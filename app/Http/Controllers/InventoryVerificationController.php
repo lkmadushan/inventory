@@ -27,7 +27,7 @@ class InventoryVerificationController extends Controller
     {
         $payload = explode('\\', $request->get('barcode'));
 
-        if (preg_match('/^#\d+$/', $payload[0])) {
+        if (preg_match('/^@\d+$/', $payload[0])) {
             $item = Inventory::where('bc_no', $payload[0])->first();
             $payload[0] = $item->item_no;
         }

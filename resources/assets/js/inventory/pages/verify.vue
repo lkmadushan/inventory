@@ -123,7 +123,7 @@
                     });
                 }
 
-                return InventoryService.find(id).then(data => {
+                return InventoryService.find(data[0]).then(data => {
                     this.$set('serverItem', data);
                 });
             }

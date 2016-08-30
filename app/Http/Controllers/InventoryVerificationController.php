@@ -27,6 +27,11 @@ class InventoryVerificationController extends Controller
     {
         $payload = explode('\\', $request->get('barcode'));
 
+        if (preg_match('/^B_EL\d+$/', $payload[0])) {
+            $item = Inventory::where('bc_no', $payload[0])->first();
+            $payload[0] = $item->item_no;
+        }
+
         $columns = ['item_no', 'location', 'rack_no', 'shelf_no'];
 
         if (count($payload) == 5) array_push($columns, 'colour_id');

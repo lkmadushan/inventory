@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-sm-8">
                             <p v-show="serverItem.name" class="help-block"><strong>Name:</strong>&nbsp;&nbsp; {{ serverItem.name }}</p>
-                            <p v-show="colour.ral_no" class="help-block">{{ colour.ral_no }} <span v-show="colour.hex_no" class="circle" :style="{ background: colour.hex_no }">&nbsp;</span></p>
+                            <p v-show="colour.ral_no" class="help-block"><strong>Colour:</strong>&nbsp;&nbsp; {{ colour.ral_no }} <span v-show="colour.hex_no" class="circle" :style="{ background: colour.hex_no }">&nbsp;</span></p>
                         </div>
                     </div>
                 </form>
@@ -46,7 +46,7 @@
     .circle {
         display: inline-block;
         margin-right: 20px;
-        margin-left: 20px;
+        margin-left: 5px;
         width: 20px;
         height: 20px;
     }

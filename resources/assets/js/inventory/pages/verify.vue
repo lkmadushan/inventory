@@ -31,6 +31,7 @@
                             <p v-show="colour.hex_no" class="help-block"><strong>Colour:</strong>&nbsp;&nbsp;
                                 <span class="circle" :style="{ background: colour.hex_no }">&nbsp;</span>
                             </p>
+                            <p v-show="colour.ral_no" class="help-block"><strong>Colour (RAL):</strong>&nbsp;&nbsp;{{ colour.ral_no }}</p>
                         </div>
                     </div>
                 </form>

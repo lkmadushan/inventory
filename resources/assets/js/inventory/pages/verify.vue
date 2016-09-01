@@ -117,6 +117,10 @@
             fetchItem() {
                 var data = this.item.barcode.split('\\');
 
+                InventoryService.isBarcodeExists(this.item.barcode).then(data => {
+                    this.$set('isBarcodeExists', data.status);
+                });
+
                 if (data.length == 5) {
                     return Promise.all([
                         InventoryService.find(data[0]),
@@ -126,10 +130,6 @@
                         this.$set('colour', colour);
                     });
                 }
-
-                InventoryService.isBarcodeExists(this.item.barcode).then(data => {
-                    this.$set('isBarcodeExists', data.status);
-                });
 
                 return InventoryService.find(data[0]).then(data => {
                     this.$set('serverItem', data);

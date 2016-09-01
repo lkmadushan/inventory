@@ -5,7 +5,7 @@
                 <form class="form-horizontal" role="form" @submit.prevent="verifyInventory" method="POST">
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="form-group form-group-sm">
+                            <div class="form-group form-group-sm" :class="{ 'has-error': isBarcodeExists }">
                                 <label for="barcode" class="col-sm-4 control-label">Barcode</label>
                                 <div class="col-sm-8">
                                     <input autofocus
@@ -69,6 +69,7 @@
                     name: '',
                     item_no: ''
                 },
+                isBarcodeExists: false,
                 colour: {
                     ral_no: '',
                     hex_no: ''
@@ -107,6 +108,7 @@
                 return InventoryService.verificationList().then(data => {
                     if(data.length) {
                         this.display = true;
+                        this.isBarcodeExists = false;
                         this.$set('verifications', data);
                     }
                 });
@@ -118,12 +120,16 @@
                 if (data.length == 5) {
                     return Promise.all([
                         InventoryService.find(data[0]),
-                        InventoryService.findColour(data[4])
+                        InventoryService.findColour(data[4]),
                     ]).then(([item, colour]) => {
                         this.$set('serverItem', item);
                         this.$set('colour', colour);
                     });
                 }
+
+                InventoryService.isBarcodeExists(this.item.barcode).then(data => {
+                    this.$set('isBarcodeExists', data.status);
+                });
 
                 return InventoryService.find(data[0]).then(data => {
                     this.$set('serverItem', data);

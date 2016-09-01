@@ -23,6 +23,17 @@ class InventoryVerificationController extends Controller
         return response(['status' => 'success'], 201);
     }
 
+    public function exists()
+    {
+        $item = InventoryVerification::where('barcode', request('barcode'))->first();
+
+        if($item) {
+            return response()->json(['status' => true]);
+        }
+
+        return response()->json(['status' => false]);
+    }
+
     private function normalizeData(Request $request)
     {
         $payload = explode('\\', $request->get('barcode'));

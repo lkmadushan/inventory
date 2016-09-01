@@ -37,4 +37,10 @@ export default class {
             .get('/api/v1/colours/' + id)
             .then(response => response.json());
     }
+
+    static isBarcodeExists(barcode) {
+        return Vue.http
+            .post('/api/v1/verification-exists', { barcode: barcode })
+            .then(response => response.json());
+    }
 }

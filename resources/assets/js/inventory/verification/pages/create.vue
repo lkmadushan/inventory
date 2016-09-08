@@ -54,9 +54,10 @@
 </style>
 
 <script>
-    import Pagination from '../../common/Pagination.vue';
-    import VerificationList from '../components/VerificationList.vue';
-    import InventoryService from '../../inventory/services/InventoryService';
+    import Pagination from '../../../common/Pagination.vue';
+    import VerificationList from '../../verification/components/VerificationList.vue';
+    import InventoryService from '../../services/InventoryService';
+    import VerificationService from '../../verification/services/VerificationService';
 
     export default {
         data() {
@@ -96,7 +97,7 @@
 
         methods: {
             verifyInventory() {
-                InventoryService.verifyStock(this.item).then(() => {
+                VerificationService.verifyStock(this.item).then(() => {
                     this.fetchTodayVerfications();
                 });
 
@@ -105,7 +106,7 @@
             },
 
             fetchTodayVerfications() {
-                return InventoryService.verificationList().then(data => {
+                return VerificationService.verificationList().then(data => {
                     if(data.length) {
                         this.display = true;
                         this.isBarcodeExists = false;
@@ -117,14 +118,14 @@
             fetchItem() {
                 var data = this.item.barcode.split('\\');
 
-                InventoryService.isBarcodeExists(this.item.barcode).then(data => {
+                VerificationService.isBarcodeExists(this.item.barcode).then(data => {
                     this.$set('isBarcodeExists', data.status);
                 });
 
                 if (data.length == 5) {
                     return Promise.all([
                         InventoryService.find(data[0]),
-                        InventoryService.findColour(data[4]),
+                        VerificationService.findColour(data[4]),
                     ]).then(([item, colour]) => {
                         this.$set('serverItem', item);
                         this.$set('colour', colour);

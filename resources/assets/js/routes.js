@@ -17,13 +17,17 @@ var routes = {
                         component: require('./inventory/pages/create.vue')
                     },
                     '/verify': {
-                        component: require('./inventory/pages/verify.vue')
+                        component: require('./inventory/verification/pages/create.vue')
                     },
                     '/store': {
                         component: require('./inventory/pages/show.vue')
-                    }
+                    },
+                    '/verifications':{
+                        component: require('./inventory/verification/pages/index.vue')
+                    },
                 }
             },
+
         }
     }
 };

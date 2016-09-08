@@ -2,21 +2,10 @@ import Vue from 'vue';
 
 export default class {
 
-    static take(params) {
+
+    static take() {
         return Vue.http
-            .get('/api/v1/inventories', { params: params })
-            .then(response => response.json());
-    }
-    
-    static find(id) {
-        return Vue.http
-            .get('/api/v1/inventories/' + id)
-            .then(response => response.json());
-    }
-    
-    static store(data) {
-        return Vue.http
-            .post('/api/v1/inventories', data)
+            .get('/api/v1/verifications')
             .then(response => response.json());
     }
 
@@ -43,6 +32,6 @@ export default class {
             .post('/api/v1/verification-exists', { barcode: barcode })
             .then(response => response.json());
     }
-    
+
 
 }

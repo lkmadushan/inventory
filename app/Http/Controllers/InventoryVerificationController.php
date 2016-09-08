@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Barcode;
 use App\Inventory;
 use Illuminate\Http\Request;
 use App\InventoryVerification;
@@ -25,32 +26,28 @@ class InventoryVerificationController extends Controller
 
     public function exists()
     {
-        $item = InventoryVerification::where('barcode', request('barcode'))->first();
+        $status = InventoryVerification::where('barcode', request('barcode'))->exists();
 
-        if($item) {
-            return response()->json(['status' => true]);
-        }
-
-        return response()->json(['status' => false]);
+        return response()->json(['status' => $status]);
     }
 
     private function normalizeData(Request $request)
     {
-        $payload = explode('\\', $request->get('barcode'));
+        $barcode = new Barcode($request->get('barcode'));
 
-        if (preg_match('/^@\d+$/', $payload[0])) {
-            $item = Inventory::where('bc_no', $payload[0])->first();
-            $payload[0] = $item->item_no;
+        $data = [];
+        $data['item_no'] = $barcode->getItemCode();
+        $data['location'] = $barcode->getLocationCode();
+        $data['rack_no'] = $barcode->getRackCode();
+        $data['shelf_no'] = $barcode->getShelfCode();
+        $data['colour_id'] = $barcode->getColorCode();
+
+        if ($barcode->hasNewItemCode()) {
+            $item = Inventory::where('bc_no', $barcode->getItemCode())->first();
+            $data['item_no'] = $item->item_no;
         }
 
-        $columns = ['item_no', 'location', 'rack_no', 'shelf_no'];
-
-        if (count($payload) == 5) array_push($columns, 'colour_id');
-
-        return collect($columns)
-            ->combine($payload)
-            ->put('physical_stock', $request->get('quantity'))
-            ->put('barcode', $request->get('barcode'))
-            ->all();
+        return $data;
     }
 }
+

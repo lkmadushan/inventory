@@ -28,7 +28,7 @@ class Barcode
 
     public function getShelfCode()
     {
-        return $this->extract()[2];
+        return $this->extract()[3];
     }
 
     public function getColorCode()

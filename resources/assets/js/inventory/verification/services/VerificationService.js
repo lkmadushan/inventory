@@ -1,11 +1,10 @@
 import Vue from 'vue';
 
 export default class {
-
-
-    static take() {
+    
+    static take(params = {}) {
         return Vue.http
-            .get('/api/v1/verifications')
+            .get('/api/v1/verifications', { params: params })
             .then(response => response.json());
     }
 
@@ -17,7 +16,7 @@ export default class {
 
     static verificationList() {
         return Vue.http
-            .get('/api/v1/verifications')
+            .get('/api/v1/verifications?today')
             .then(response => response.json());
     }
 
@@ -32,6 +31,4 @@ export default class {
             .post('/api/v1/verification-exists', { barcode: barcode })
             .then(response => response.json());
     }
-
-
 }

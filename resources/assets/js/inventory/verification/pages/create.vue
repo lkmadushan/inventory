@@ -38,7 +38,7 @@
     </div>
 
     <div v-show="display">
-        <verification-list :list="verifications"></verification-list>
+        <verification-list :list="verifications.data"></verification-list>
     </div>
 
 </template>
@@ -75,7 +75,9 @@
                     ral_no: '',
                     hex_no: ''
                 },
-                verifications: [],
+                verifications: {
+                    data: []
+                },
                 display: false,
             }
         },
@@ -88,7 +90,7 @@
         },
 
         created() {
-            this.fetchTodayVerfications();
+            this.fetchTodayVerifications();
 
             Vue.nextTick(function() {
                 $('#barcode').focus();
@@ -97,17 +99,17 @@
 
         methods: {
             verifyInventory() {
-                VerificationService.verifyStock(this.item).then(() => {
-                    this.fetchTodayVerfications();
+                VerificationService.verifyStock(this.item).then(date => {
+                    this.fetchTodayVerifications();
                 });
 
                 $('#quantity').val('');
                 $('#barcode').val('').focus();
             },
 
-            fetchTodayVerfications() {
+            fetchTodayVerifications() {
                 return VerificationService.verificationList().then(data => {
-                    if(data.length) {
+                    if(data.total > 0) {
                         this.display = true;
                         this.isBarcodeExists = false;
                         this.$set('verifications', data);

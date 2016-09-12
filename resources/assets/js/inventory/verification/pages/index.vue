@@ -13,7 +13,7 @@
                  </tr>
             </thead>
             <tbody>
-            <tr v-for="verification in verifications">
+            <tr v-for="verification in verifications.data">
                 <td>{{ verification.item_no }} - {{ verification.item.name }}</td>
                 <td>{{ verification.location ? verification.location.location : 'N/A' }}</td>
                 <td>{{ verification.colour ? verification.colour.ral_no : 'N/A' }}</td>
@@ -24,21 +24,23 @@
             </tbody>
 
         </table>
-        <!--<div class="pull-right">-->
-            <!--<pagination :pagination="verifications" :callback="fetchVerifications"></pagination>-->
-        <!--</div>-->
+        <div class="pull-right">
+            <pagination :pagination="verifications" :callback="fetchVerifications"></pagination>
+        </div>
     </div>
 </template>
 
 <script>
     import VerificationService from '../../verification/services/VerificationService';
+    import Pagination from '../../../common/Pagination.vue';
 
     export default {
 
+        components: { Pagination },
 
         data(){
             return{
-                verifications: [],
+                verifications: {},
                 query: {}
             }
         },
@@ -48,9 +50,11 @@
         },
 
         methods: {
-           fetchVerifications() {
+           fetchVerifications(page = 1) {
+               var params = this.query;
+               params.page = page;
 
-                VerificationService.take().then((data) => {
+                VerificationService.take(params).then((data) => {
                     this.$set('verifications', data);
             });
            }

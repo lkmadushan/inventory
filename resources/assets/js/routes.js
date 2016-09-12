@@ -25,6 +25,12 @@ var routes = {
                     '/verifications':{
                         component: require('./inventory/verification/pages/index.vue')
                     },
+                    '/materialrequests':{
+                        component: require('./inventory/material-requests/pages/index.vue')
+                    },
+                    '/materialrequests/create':{
+                        component: require('./inventory/material-requests/pages/create.vue')
+                    },
                 }
             },
 

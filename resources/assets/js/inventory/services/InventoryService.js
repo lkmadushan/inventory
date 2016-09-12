@@ -43,6 +43,5 @@ export default class {
             .post('/api/v1/verification-exists', { barcode: barcode })
             .then(response => response.json());
     }
-    
-
 }
+

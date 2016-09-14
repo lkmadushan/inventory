@@ -19,4 +19,6 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'auth'], function() {
 
 Route::auth();
 
+Route::get('/sandbox', 'OrdersController@index');
+
 Route::get('/{vue?}', 'HomeController@show')->where('vue', '.*')->middleware('auth');

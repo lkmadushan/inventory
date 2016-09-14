@@ -34,7 +34,7 @@
 							</a>
 						</li>
 						<li>
-							<a v-link="{path: '/inventories/create'}">
+							<a v-link="{path: '/inventories/material_requests/create'}">
 								<i class="fa fa-btn fa-fw"></i>Create Material Request</span>
 							</a>
 						</li>

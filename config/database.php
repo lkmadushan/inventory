@@ -104,6 +104,15 @@ return [
             ]
         ],
 
+        'sqlsrv' => [
+            'driver'   => 'sqlsrv',
+            'host'     => env('MSSQL_DB_HOST', '172.16.1.25'),
+            'database' => env('MSSQL_DB_DATABASE', 'navision'),
+            'username' => env('MSSQL_DB_USERNAME', 'super'),
+            'password' => env('MSSQL_DB_PASSWORD', 'P@ssw0rd'),
+            'charset'  => 'utf8',
+            'prefix'   => '',
+        ],
     ],
 
     /*

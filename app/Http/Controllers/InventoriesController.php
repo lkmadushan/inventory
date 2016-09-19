@@ -14,8 +14,14 @@ class InventoriesController extends Controller
         return response()->json($inventories->toArray());
     }
 
-    public function show(Inventory $item)
+    public function show($item)
     {
+        if (preg_match('/^@\d+$/', $item)) {
+            $item = Inventory::where('bc_no', $item)->first();
+        } else {
+            $item = Inventory::where('item_no', $item)->first();
+        }
+
         return response()->json($item->toArray());
     }
 

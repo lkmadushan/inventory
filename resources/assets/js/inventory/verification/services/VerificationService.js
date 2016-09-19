@@ -1,22 +1,10 @@
 import Vue from 'vue';
 
 export default class {
-
-    static take(params) {
-        return Vue.http
-            .get('/api/v1/inventories', { params: params })
-            .then(response => response.json());
-    }
     
-    static find(id) {
+    static take(params = {}) {
         return Vue.http
-            .get('/api/v1/inventories/' + id)
-            .then(response => response.json());
-    }
-    
-    static store(data) {
-        return Vue.http
-            .post('/api/v1/inventories', data)
+            .get('/api/v1/verifications', { params: params })
             .then(response => response.json());
     }
 
@@ -28,7 +16,7 @@ export default class {
 
     static verificationList() {
         return Vue.http
-            .get('/api/v1/verifications')
+            .get('/api/v1/verifications?today')
             .then(response => response.json());
     }
 
@@ -44,4 +32,3 @@ export default class {
             .then(response => response.json());
     }
 }
-

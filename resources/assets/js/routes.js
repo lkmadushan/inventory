@@ -17,13 +17,23 @@ var routes = {
                         component: require('./inventory/pages/create.vue')
                     },
                     '/verify': {
-                        component: require('./inventory/pages/verify.vue')
+                        component: require('./inventory/verification/pages/create.vue')
                     },
                     '/store': {
                         component: require('./inventory/pages/show.vue')
-                    }
+                    },
+                    '/verifications':{
+                        component: require('./inventory/verification/pages/index.vue')
+                    },
+                    '/material_requests':{
+                        component: require('./inventory/material-requests/pages/create.vue')
+                    },
+                    '/material_requests/create':{
+                        component: require('./inventory/material-requests/pages/create.vue')
+                    },
                 }
             },
+
         }
     }
 };

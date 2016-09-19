@@ -23,11 +23,21 @@
 								<i class="fa fa-btn fa-fw fa-thumbs-up"></i>Inventory Verification</span>
 							</a>
 						</li>
-						<!--<li >-->
-							<!--<a v-link="{ path: '/inventories/dispatch' }">-->
-								<!--<i class="fa fa-btn fa-fw fa-reply"></i>&nbsp;Inventory Dispatch</span>-->
-							<!--</a>-->
-						<!--</li>-->
+						<li >
+							<a v-link="{ path: '/inventories/verifications' }">
+								<i class="fa fa-btn fa-fw fa-list"></i>&nbsp;View Inventory Verification</span>
+							</a>
+						</li>
+						<li>
+							<a v-link="{ path: '/inventories/create' }">
+								<i class="fa fa-btn fa-fw"></i>Create Transfer Order</span>
+							</a>
+						</li>
+						<li>
+							<a v-link="{ path: '/inventories/material_requests/create' }">
+								<i class="fa fa-btn fa-fw"></i>Create Material Request</span>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>

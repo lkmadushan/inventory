@@ -22,6 +22,7 @@ elixir(function(mix) {
     mix.copy('./node_modules/font-awesome/fonts', './public/fonts');
     mix.copy('./node_modules/bootstrap-sass/assets/fonts/bootstrap', './public/fonts/bootstrap');
     mix.copy('./resources/assets/images', './public/images');
-
+    mix.copy('./resources/assets/fonts', './public/fonts');
+    
     mix.browserify('app.js');
 });

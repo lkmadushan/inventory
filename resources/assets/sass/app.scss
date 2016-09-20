@@ -1,12 +1,19 @@
 //We override this files which are to be kept original
 
 //We add Lato font here and also font-family in elsteel/_variable
-@import url(https://fonts.googleapis.com/css?family=Lato);
-
+@font-face {
+  font-family: Lato;
+  src: url(../fonts/Lato-Regular.ttf);
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
 //the order of these files are !important
 @import "node_modules/font-awesome/scss/font-awesome.scss";
 @import "elsteel/_variables";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/select2-bootstrap-theme/src/select2-bootstrap.scss";
 
 //Import our customised css
 @import "elsteel/elsteel";

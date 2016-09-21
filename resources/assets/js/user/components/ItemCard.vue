@@ -1,0 +1,197 @@
+<template>
+    <form class="form-horizontal" role="form" @submit.prevent="submitForm" method="post">
+        <tabs>
+            <tab header="General">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <label for="employee_status" class="col-sm-4 control-label">Employee Status</label>
+                            <div class="col-sm-8">
+                                <select v-model=""
+                                        class="form-control"
+                                        id="employee_status"
+                                        placeholder="Employee Status">
+                                    <option selected>Active</option>
+                                    <option>Terminated</option>
+                                    <option>Leave of Absence</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="first_name" class="col-sm-4 control-label">First Name</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       id="first_name"
+                                       v-model="item.first_name"
+                                       required
+                                       placeholder="First Name">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="last_name" class="col-sm-4 control-label">Last Name</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       id="last_name"
+                                       placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="title" class="col-sm-4 control-label">Title</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       id="title"
+                                       v-model="item.title"
+                                       required
+                                       placeholder="Title">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="department" class="col-sm-4 control-label">Department</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       id="department"
+                                       v-model="item.department"
+                                       required
+                                       placeholder="Department">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="home_phone" class="col-sm-4 control-label">Home Phone</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       id="home_phone"
+                                       value=""
+                                       placeholder="Home Phone">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="mobile_phone" class="col-sm-4 control-label">Mobile Phone</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       id="mobile_phone"
+                                       placeholder="Mobile Phone">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="email" class="col-sm-4 control-label">Email Address</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       id="email"
+                                       placeholder="Email Address">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-4">
+
+                        <div class="form-group form-group-sm">
+                            <label for="primary_address" class="col-sm-4 control-label">Primary Address</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       id="primary_address"
+                                       placeholder="Primary Address">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="city" class="col-sm-4 control-label">City</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       id="city"
+                                       placeholder="City">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="state" class="col-sm-4 control-label">State</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       id="state"
+                                       placeholder="State">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="country" class="col-sm-4 control-label">Country</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       id="country"
+                                       placeholder="Country">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="postal_code" class="col-sm-4 control-label">Postal Code</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       id="postal_code"
+                                       placeholder="Postal Code">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="name" class="col-sm-4 control-label">Username</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       id="name"
+                                       placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="password" class="col-sm-4 control-label">Password</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       id="password"
+                                       placeholder="Password">
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </tab>
+
+        </tabs>
+        <button type="submit"
+                class="btn btn-primary"><i class="fa fa-pencil-square-o"></i> Save User</button>
+    </form>
+</template>
+
+<script>
+    export default {
+
+        props: {
+            callback: {
+                type: Function,
+                required: true
+            },
+
+            item: {
+                type: Object,
+                default: Object
+            }
+        },
+
+        components: {
+            'tab': VueStrap.tab,
+            'tabs': VueStrap.tabset
+        },
+
+        methods: {
+            submitForm() {
+                this.callback(this.item);
+            }
+        }
+    }
+</script>

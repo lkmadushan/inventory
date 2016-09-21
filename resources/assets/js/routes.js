@@ -30,9 +30,22 @@ var routes = {
                     },
                     '/material_requests/create':{
                         component: require('./inventory/material-requests/pages/create.vue')
-                    },
+                    }
                 }
             },
+
+            '/users': {
+                component: require('./user/User.vue'),
+                subRoutes: {
+                    '/': {
+                        component: require('./user/pages/index.vue')
+                    },
+                    '/create': {
+                        component: require('./user/pages/create.vue')
+                    }
+                }
+            }
+
 
         }
     }

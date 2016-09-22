@@ -12,7 +12,7 @@
     import Search from '../../common/Search.vue';
     import Pagination from '../../common/Pagination.vue';
     import ItemCard from '../components/ItemCard.vue';
-    import InventoryService from '../../inventory/services/InventoryService';
+    import InventoryService from '../../user/services/InventoryService';
 
     export default {
         components: {

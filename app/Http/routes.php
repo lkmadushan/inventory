@@ -12,6 +12,8 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'auth'], function() {
     Route::post('/verifications', 'InventoryVerificationController@store');
     Route::post('/verification-exists','InventoryVerificationController@exists');
 
+    Route::post('/users','UserController@store');
+
     Route::get('/colours/{colour}', function (Colour $colour) {
         return response()->json($colour->toArray());
     });

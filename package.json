@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "font-awesome": "^4.6.3",
+    "lodash": "^4.16.1",
     "vue-strap": "^1.0.11"
   }
 }

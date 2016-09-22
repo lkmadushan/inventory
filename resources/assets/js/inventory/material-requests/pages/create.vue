@@ -4,9 +4,8 @@
             <div class="col-md-4">
                 <div class="container-fluid">
                     <h2>Items</h2>
-                    <form @submit.prevent="collectItems">
                         <div class="form-group">
-                            <typeahead class="typeahead"
+                            <typeahead v-el:typeahead
                                        :async="'/api/v1/inventories?query='"
                                        :key="'data'"
                                        :template="'{{ item.name + \' - \' + item.item_no }}'"
@@ -14,10 +13,14 @@
                                        :on-hit="fetchItem"></typeahead>
                         </div>
                         <div class="form-group">
-                            <input type="text" v-model="quantity" class="form-control" required>
+                            <input @keydown.enter="collectItems"
+                                   type="text"
+                                   v-el:quantity
+                                   v-model="quantity"
+                                   class="form-control"
+                                   required>
                         </div>
-                        <button type="submit" class="btn btn-sm btn-primary">Add</button>
-                    </form>
+                    <button @click="collectItems" :disabled="isDisabled" type="button" class="btn btn-sm btn-primary">Add</button>
                 </div>
             </div>
             <div class="col-md-12">
@@ -38,7 +41,7 @@
                     </tr>
                     </tbody>
                 </table>
-                <button type=submit" class="btn btn-primary" @click="test">
+                <button type=submit" class="btn btn-primary" @click="createMaterialRequest">
                     <i class="fa fa-pencil-square-o"></i> Send Request
                 </button>
             </div>
@@ -51,6 +54,10 @@
 
     export default {
 
+        components: {
+            typeahead: VueStrap.typeahead
+        },
+
         data() {
             return {
                 items: [],
@@ -59,33 +66,39 @@
             }
         },
 
-        components: {
-            typeahead: VueStrap.typeahead
-        },
-
         ready() {
-            $('.typeahead').find('input').focus();
+            $(this.$els.typeahead).find('input').focus();
         },
 
-        methods:{
+        computed: {
+            isDisabled() {
+                return _.isEmpty(this.quantity) || _.isEmpty(this.item);
+            }
+        },
+
+        methods: {
 
             fetchItem(item, typehead) {
+                this.$els.quantity.focus();
+
                 const that = typehead;
-
+                that.showDropdown = false;
                 that.$set('value', item.name);
-                this.$set('item', item);
 
+                this.$set('item', item);
             },
 
             collectItems() {
+                if(this.isDisabled) return;
+
                 this.item.quantity = this.quantity;
                 this.items.push(this.item);
 
-                this.quantity='';
-                $('.typeahead').find('input').val('');
+                $(this.$els.typeahead).find('input').val('');
+                $(this.$els.typeahead).find('input').focus();
 
-                $('.typeahead').find('input').focus();
-
+                this.quantity = '';
+                this.item = {};
             },
 
             removeItem(item) {

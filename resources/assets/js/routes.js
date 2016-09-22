@@ -22,17 +22,38 @@ var routes = {
                     '/store': {
                         component: require('./inventory/pages/show.vue')
                     },
-                    '/verifications':{
+                    '/verifications': {
                         component: require('./inventory/verification/pages/index.vue')
-                    },
-                    '/material_requests':{
-                        component: require('./inventory/material-requests/pages/create.vue')
-                    },
-                    '/material_requests/create':{
-                        component: require('./inventory/material-requests/pages/create.vue')
                     }
                 }
             },
+
+            '/material-requests': {
+                component: require('./inventory/Inventory.vue'),
+                subRoutes: {
+                    '/': {
+                        component: require('./inventory/material-requests/pages/index.vue')
+                    },
+                    '/create': {
+                        component: require('./inventory/material-requests/pages/create.vue')
+                    }
+
+                }
+            },
+
+            '/transfer-orders': {
+                component: require('./inventory/Inventory.vue'),
+                subRoutes: {
+                    '/': {
+                        component: require('./inventory/transfer-orders/pages/index.vue')
+                    },
+                    '/create': {
+                        component: require('./inventory/transfer-orders/pages/create.vue')
+                    }
+
+                }
+            },
+
 
             '/users': {
                 component: require('./user/User.vue'),
@@ -46,9 +67,9 @@ var routes = {
                 }
             }
 
-
         }
     }
-};
+
+}
 
 module.exports = routes;

@@ -13,9 +13,24 @@
 <script>
     import Navigation from '../common/Navigation.vue';
     import FooterBottom from '../common/FooterBottom.vue';
+    import AuthService from '../auth/services/AuthService';
+    import Store from '../Store';
 
     export default {
-        components: { Navigation, FooterBottom }
+        data() {
+            return {
+                shared: Store
+            }
+        },
 
+        components: { Navigation, FooterBottom },
+
+        route: {
+            data() {
+                return AuthService.currentUser().then((user) => {
+                    this.shared['user'] = user;
+                });
+            }
+        }
     }
 </script>

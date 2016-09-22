@@ -202,8 +202,11 @@
 
         methods: {
             submitForm() {
+
                 this.callback(this.user);
+
             }
         }
     }
 </script>
+

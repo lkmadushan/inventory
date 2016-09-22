@@ -4,6 +4,8 @@ use App\Colour;
 
 Route::group(['prefix' => 'api/v1', 'middleware' => 'auth'], function() {
 
+    Route::get('/current','Auth\AuthController@getCurrentUser');
+
     Route::get('/inventories', 'InventoriesController@index');
     Route::get('/inventories/{item}', 'InventoriesController@show');
     Route::post('/inventories','InventoriesController@store');
@@ -13,6 +15,11 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'auth'], function() {
     Route::post('/verification-exists','InventoryVerificationController@exists');
 
     Route::post('/users','UserController@store');
+
+    Route::get('/material-requests', 'MaterialRequestsController@index');
+    Route::get('/material-requests/{item}', 'MaterialRequestsController@show');
+    Route::post('/material-requests','MaterialRequestsController@store');
+
 
     Route::get('/colours/{colour}', function (Colour $colour) {
         return response()->json($colour->toArray());

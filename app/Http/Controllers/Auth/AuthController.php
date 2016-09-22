@@ -37,7 +37,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+        $this->middleware($this->guestMiddleware(), ['except' => ['logout', 'getCurrentUser']]);
     }
 
     /**
@@ -68,5 +68,10 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => $data['password'],
         ]);
+    }
+
+    public function getCurrentUser()
+    {
+        return auth()->user()->toArray();
     }
 }

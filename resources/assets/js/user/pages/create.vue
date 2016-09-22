@@ -14,6 +14,7 @@
     import UserCard from '../../user/components/UserCard.vue';
     import UserService from '../../user/services/UserService';
 
+
     export default {
         components: {
             'tab': VueStrap.tab,
@@ -24,8 +25,10 @@
         },
 
         methods:{
+
             createUser(data){
                 UserService.store(data).then(response => console.log(response));
+
             }
         }
     }

@@ -9,12 +9,12 @@
 
                     <ul class="nav app-tabs-stacked">
                         <li >
-                            <a v-link="{ path: '/user/create' }">
+                            <a v-link="{ path: '/users/create' }">
                                 <i class="fa fa-btn fa-fw fa-lightbulb-o"></i>Create User
                             </a>
                         </li>
                         <li >
-                            <a v-link="{ path: '/user/index' }">
+                            <a v-link="{ path: '/users' }">
                                 <i class="fa fa-btn fa-fw fa-list"></i>View Users
                             </a>
                         </li>

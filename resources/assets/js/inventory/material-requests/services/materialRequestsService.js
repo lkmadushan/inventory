@@ -1,25 +1,12 @@
 import Vue from 'vue';
 
 export default class {
-
-    static take(params) {
+    
+    static store(data) {
         return Vue.http
-            .get('/api/v1/inventories', { params: params })
+            .post('/api/v1/inventories', data)
             .then(response => response.json());
     }
-
-    static find(id) {
-        return Vue.http
-            .get('/api/v1/inventories/' + id)
-            .then(response => response.json());
-    }
-
-    static findAll() {
-        return Vue.http
-            .get('/api/v1/inventories')
-            .then(response => response.json());
-    }
-
 
 
 

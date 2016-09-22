@@ -31,23 +31,23 @@
 						</li>
 						<hr>
 						<li>
-							<a v-link="{path: '/inventories/transferorders/create'}">
+							<a v-link="{path: '/transfer-orders/create'}">
 								<i class="fa fa-btn fa-fw"></i>Create Transfer Order
 							</a>
 						</li>
 						<li>
-							<a v-link="{path: '/inventories/transferorders'}">
+							<a v-link="{path: '/transfer-orders'}">
 								<i class="fa fa-btn fa-fw"></i>View Transfer Orders
 							</a>
 						</li>
 						<hr>
 						<li>
-							<a v-link="{path: '/inventories/materialrequests/create'}">
+							<a v-link="{path: '/material-requests/create'}">
 								<i class="fa fa-btn fa-fw"></i>Create Material Request
 							</a>
 						</li>
 						<li>
-							<a v-link="{path: '/inventories/materialrequests'}">
+							<a v-link="{path: '/material-requests'}">
 								<i class="fa fa-btn fa-fw"></i>View Material Requests
 							</a>
 						</li>

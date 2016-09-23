@@ -61,6 +61,9 @@ var routes = {
                     '/': {
                         component: require('./user/pages/index.vue')
                     },
+                    '/:id': {
+                        component: require('./user/pages/show.vue')
+                    },
                     '/create': {
                         component: require('./user/pages/create.vue')
                     }

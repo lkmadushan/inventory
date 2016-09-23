@@ -7,15 +7,33 @@
                         <div class="form-group form-group-sm">
                             <label for="employee_status" class="col-sm-4 control-label">Employee Status</label>
                             <div class="col-sm-8">
-                                <select v-model=""
-                                        class="form-control"
+                                <select class="form-control"
                                         id="employee_status"
-                                        v-model="user.employee_status"
-                                        placeholder="Employee Status">
-                                    <option selected>Active</option>
-                                    <option>Terminated</option>
-                                    <option>Leave of Absence</option>
+                                        v-model="user.employee_status">
+                                    <option selected value="1">Active</option>
+                                    <option value="2">Inactive</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="user_type" class="col-sm-4 control-label">User Type</label>
+                            <div class="col-sm-8">
+                                <select class="form-control"
+                                        id="user_type"
+                                        v-model="user.user_type">
+                                    <option selected value="1">Regular User</option>
+                                    <option value="2">Administrator</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="employee_id" class="col-sm-4 control-label">Employee Id</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       id="employee_id"
+                                       v-model="user.employee_id"
+                                       placeholder="Employee Id">
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
@@ -82,6 +100,13 @@
                                        placeholder="Mobile Phone">
                             </div>
                         </div>
+
+                    </div>
+
+
+
+                    <div class="col-md-4">
+
                         <div class="form-group form-group-sm">
                             <label for="email" class="col-sm-4 control-label">Email Address</label>
                             <div class="col-sm-8">
@@ -92,11 +117,6 @@
                                        placeholder="Email Address">
                             </div>
                         </div>
-                    </div>
-
-
-
-                    <div class="col-md-4">
 
                         <div class="form-group form-group-sm">
                             <label for="primary_address" class="col-sm-4 control-label">Primary Address</label>

@@ -14,7 +14,10 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'auth'], function() {
     Route::post('/verifications', 'InventoryVerificationController@store');
     Route::post('/verification-exists','InventoryVerificationController@exists');
 
-    Route::post('/users','UserController@store');
+    Route::post('/users','UsersController@store');
+    Route::get('/users/{user}', 'UsersController@show');
+    Route::get('/users','UsersController@index');
+    Route::patch('/users/{user}','UsersController@update');
 
     Route::get('/material-requests', 'MaterialRequestsController@index');
     Route::get('/material-requests/{item}', 'MaterialRequestsController@show');

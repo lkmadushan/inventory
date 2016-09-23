@@ -1,26 +1,32 @@
 <template>
 	<div>
-		<search :query.sync="query" :callback="fetchInventories"></search>
+		<!--<search :query.sync="query" :callback="fetchUsers"></search>-->
 		<table class="table table-hover table-condensed">
 			<thead>
 			<tr>
-				<th>Item No</th>
-				<th>Name</th>
-				<th>Description</th>
-				<th>Quantity</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Username</th>
+				<th>Department</th>
+				<th>Title</th>
+				<th>Email</th>
+				<th>Employee Status</th>
 			</tr>
 			</thead>
 			<tbody>
-			<tr v-for="item in inventories.data" v-link="{ path: '/inventories/' + item.item_no }">
-				<td>{{ item.item_no }}</td>
-				<td>{{ item.name }}</td>
-				<td>{{ item.description }}</td>
-				<td>{{ item.quantity }}</td>
+			<tr v-for="user in users.data" v-link="{ path: '/users/' + user.id }">
+				<td>{{ user.first_name }}</td>
+				<td>{{ user.last_name }}</td>
+				<td>{{ user.name }}</td>
+				<td>{{ user.department }}</td>
+				<td>{{ user.title }}</td>
+				<td>{{ user.email }}</td>
+				<td>{{ (user.employee_status==1) ? 'Active' : 'Inactive' }}</td>
 			</tr>
 			</tbody>
 		</table>
 		<div class="pull-right">
-			<pagination :pagination="inventories" :callback="fetchInventories"></pagination>
+			<pagination :pagination="users" :callback="fetchUsers"></pagination>
 		</div>
 	</div>
 </template>
@@ -28,12 +34,12 @@
 <script>
 	import Search from '../../common/Search.vue';
 	import Pagination from '../../common/Pagination.vue';
-	import InventoryService from '../../inventory/services/InventoryService';
+	import UserService from '../../user/services/UserService';
 
 	export default {
 		data() {
 			return {
-				inventories: {},
+				users: {},
 				query: {}
 			}
 		},
@@ -41,16 +47,16 @@
 		components: { Pagination, Search },
 
 		created() {
-			this.fetchInventories();
+			this.fetchUsers();
 		},
 
 		methods: {
-			fetchInventories(page = 1) {
+			fetchUsers(page = 1) {
 				var params = this.query;
 				params.page = page;
 
-				InventoryService.take(params).then((data) => {
-					this.$set('inventories', data);
+				UserService.take(params).then((data) => {
+					this.$set('users', data);
 				});
 			}
 		}

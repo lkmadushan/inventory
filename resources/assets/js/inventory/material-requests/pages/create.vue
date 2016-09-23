@@ -4,22 +4,22 @@
             <div class="col-md-4">
                 <div class="container-fluid">
                     <h2>Items</h2>
-                    <div class="form-group">
-                        <typeahead v-el:typeahead
-                                   :async="'/api/v1/inventories?query='"
-                                   :key="'data'"
-                                   :template="'{{ item.name + \' - \' + item.item_no }}'"
-                                   :template-name="'async'"
-                                   :on-hit="fetchItem"></typeahead>
-                    </div>
-                    <div class="form-group">
-                        <input @keydown.enter="collectItems"
-                               type="text"
-                               v-el:quantity
-                               v-model="quantity"
-                               class="form-control"
-                               required>
-                    </div>
+                        <div class="form-group">
+                            <typeahead v-el:typeahead
+                                       :async="'/api/v1/inventories?query='"
+                                       :key="'data'"
+                                       :template="'{{ item.name + \' - \' + item.item_no }}'"
+                                       :template-name="'async'"
+                                       :on-hit="fetchItem"></typeahead>
+                        </div>
+                        <div class="form-group">
+                            <input @keydown.enter="collectItems"
+                                   type="text"
+                                   v-el:quantity
+                                   v-model="quantity"
+                                   class="form-control"
+                                   required>
+                        </div>
                     <button @click="collectItems" :disabled="isDisabled" type="button" class="btn btn-sm btn-primary">Add</button>
                 </div>
             </div>

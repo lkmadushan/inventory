@@ -34,6 +34,10 @@ var routes = {
                     '/': {
                         component: require('./inventory/material-requests/pages/index.vue')
                     },
+                    '/:id': {
+                        component: require('./inventory/material-requests/pages/show.vue')
+                    },
+
                     '/create': {
                         component: require('./inventory/material-requests/pages/create.vue')
                     }

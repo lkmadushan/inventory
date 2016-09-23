@@ -29,5 +29,10 @@ class InventoriesController extends Controller
     {
         return Inventory::create(request()->only(['item_no', 'name','description']));
     }
+
+    public function update(Inventory $item)
+    {
+        $item->update(request()->all());
+    }
     
 }

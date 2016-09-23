@@ -30,8 +30,8 @@
         },
 
         methods: {
-            updateInventory(data) {
-                InventoryService.store(data).then(response => console.log(response));
+            updateInventory(item) {
+                InventoryService.update(item.id, item).then(response => console.log(response));
             }
         },
 

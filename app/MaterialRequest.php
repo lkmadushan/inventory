@@ -6,7 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class MaterialRequest extends Model
 {
+    use Numbering;
+
     protected $fillable = [
-        'item_no', 'system_stock', 'physical_stock', 'location', 'shelf_no', 'rack_no', 'verified_by', 'barcode', 'colour_id'
+        'number', 'user_id',
     ];
+
+    public function details()
+    {
+        return $this->hasMany(MaterialRequestDetail::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

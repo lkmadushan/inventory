@@ -22,7 +22,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                                <i class="fa fa-user" aria-hidden="true"></i>&nbsp; {{ shared.user.name | capitalize }} <span class="caret"></span>
+                                <i class="fa fa-user" aria-hidden="true"></i>&nbsp; {{ user.name | capitalize }} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a v-link="{ path: '/users'}">Users</a></li>
@@ -48,12 +48,19 @@
 </template>
 
 <script>
-    import Store from '../Store';
 
     export default{
         data() {
             return {
-                shared: Store
+                user: {}
+            }
+        },
+
+        events: {
+            userRetrieved(user) {
+                this.user = user;
+
+                return true;
             }
         }
 

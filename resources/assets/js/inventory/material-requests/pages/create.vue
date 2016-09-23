@@ -37,7 +37,7 @@
                         <td>{{ item.item_no }}</td>
                         <td>{{ item.name }}</td>
                         <td>{{ item.quantity }}</td>
-                        <td><button @click="removeItem(item)">Delete</button></td>
+                        <td><i @click="removeItem(item)" class="fa fa-trash-o"></i></td>
                     </tr>
                     </tbody>
                 </table>
@@ -62,7 +62,8 @@
             return {
                 items: [],
                 item: {},
-                quantity: ''
+                quantity: '',
+                name: ''
             }
         },
 
@@ -105,8 +106,10 @@
                 this.items.$remove(item);
             },
 
-            createMaterialRequest(data){
-                MaterialRequestService.store(data).then(response => console.log(response));
+            createMaterialRequest(){
+                MaterialRequestService.store(this.items).then(response => console.log(response));
+
+                this.items = [];
             }
         }
 

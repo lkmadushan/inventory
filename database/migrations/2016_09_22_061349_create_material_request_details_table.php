@@ -14,6 +14,9 @@ class CreateMaterialRequestDetailsTable extends Migration
     {
         Schema::create('material_request_details', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('material_request_id');
+            $table->string('item_no');
+            $table->float('quantity');
             $table->timestamps();
         });
     }

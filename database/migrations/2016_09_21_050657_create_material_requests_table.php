@@ -14,7 +14,8 @@ class CreateMaterialRequestsTable extends Migration
     {
         Schema::create('material_requests', function (Blueprint $table) {
             $table->increments('id');
-            
+            $table->string('number');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

@@ -188,6 +188,16 @@
                                        placeholder="Password">
                             </div>
                         </div>
+                        <div class="form-group form-group-sm">
+                            <label for="password_conform" class="col-sm-4 control-label">Conform Password</label>
+                            <div class="col-sm-8">
+                                <input type="password"
+                                       class="form-control"
+                                       id="password_conform"
+                                       v-model="user.password_conform"
+                                       placeholder="Conform Password">
+                            </div>
+                        </div>
 
 
                     </div>

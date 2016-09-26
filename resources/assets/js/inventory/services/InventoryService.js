@@ -43,5 +43,12 @@ export default class {
             .post('/api/v1/verification-exists', { barcode: barcode })
             .then(response => response.json());
     }
+
+    static update(id, data) {
+        return Vue.http
+            .patch('/api/v1/inventories/' + id ,data)
+            .then(response => response.json());
+    }
+
 }
 

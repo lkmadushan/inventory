@@ -10,11 +10,13 @@
                                        :key="'data'"
                                        :template="'{{ item.name + \' - \' + item.item_no }}'"
                                        :template-name="'async'"
-                                       :on-hit="fetchItem"></typeahead>
+                                       :on-hit="fetchItem"
+                                       placeholder="Enter Item Name or Number"></typeahead>
                         </div>
                         <div class="form-group">
                             <input @keydown.enter="collectItems"
                                    type="text"
+                                   placeholder="Quantity"
                                    v-el:quantity
                                    v-model="quantity"
                                    class="form-control"
@@ -23,17 +25,21 @@
                     <button @click="collectItems" :disabled="isDisabled" type="button" class="btn btn-sm btn-primary">Add</button>
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12" v-show="display">
                 <table class="table table-hover">
                     <thead>
                     <tr>
+                        <th><input type="checkbox" v-model="selectAll"></th>
                         <th>Item No</th>
                         <th>Name</th>
                         <th>Quantity</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr v-for="item in items">
+
+                        <td><input type="checkbox" v-model="selected" :value="item.item_no" number></td>
                         <td>{{ item.item_no }}</td>
                         <td>{{ item.name }}</td>
                         <td>{{ item.quantity }}</td>
@@ -52,6 +58,7 @@
 <script>
     import MaterialRequestService from '../services/MaterialRequestsService';
 
+
     export default {
 
         components: {
@@ -63,7 +70,9 @@
                 items: [],
                 item: {},
                 quantity: '',
-                name: ''
+                name: '',
+                display:false,
+                selected: []
             }
         },
 
@@ -74,6 +83,21 @@
         computed: {
             isDisabled() {
                 return _.isEmpty(this.quantity) || _.isEmpty(this.item);
+            },
+
+            selectAll: {
+                get: function () {
+                    return this.items ? this.selected.length == this.items.length : false;
+                },
+                set: function (value) {
+                    var selected = [];
+
+                    if (value) {
+                        this.items.forEach((item) => selected.push(item.item_no));
+                    }
+
+                    this.selected = selected;
+                }
             }
         },
 
@@ -90,6 +114,7 @@
             },
 
             collectItems() {
+                this.display = true;
                 if(this.isDisabled) return;
 
                 this.item.quantity = this.quantity;

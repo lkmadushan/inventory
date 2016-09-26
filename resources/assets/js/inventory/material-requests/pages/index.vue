@@ -10,10 +10,19 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="materialrequest in materialRequests.data" v-link="{ path: '/material-requests/' + materialrequest.id }">
-                <td>{{ materialrequest.number }}</td>
-                <td>{{ materialrequest.user.name }}</td>
-                <td>{{ materialrequest.user.department }}</td>
+            <tr v-for="materialRequest in materialRequests.data" >
+                <td v-link="{ path: '/material-requests/' + materialRequest.id }">{{ materialRequest.number }}</td>
+                <td>{{ materialRequest.user.name }}</td>
+                <td>
+                    {{ materialRequest.user.department }}
+
+                    <dropdown text="Options" type="primary" class="btn-group-xs pull-right">
+                        <li><a v-link="{ path: '/material-requests/' + materialRequest.id }">View</a></li>
+                        <li><a href="#dropdown">Delete</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a  v-link="{ path: '/material-requests/issue/' + materialRequest.id }">Dispatch</a></li>
+                    </dropdown>
+                </td>
             </tr>
             </tbody>
         </table>
@@ -32,15 +41,22 @@
         data() {
             return {
                 materialRequests: {},
-                query: {}
+                query: {},
+                selected: []
             }
         },
 
-        components: { Pagination, Search },
+        components: {
+            'pagination': Pagination,
+            'search': Search,
+            'dropdown': VueStrap.dropdown
+
+        },
 
         created() {
             this.fetchMaterialRequests();
         },
+
 
         methods: {
             fetchMaterialRequests(page = 1) {
@@ -49,7 +65,14 @@
 
                 MaterialRequestService.take(params).then((data) => {
                     this.$set('materialRequests', data);
+
+
             });
+            },
+
+            removeItem(materialRequest){
+
+                alert();
             }
         }
     }

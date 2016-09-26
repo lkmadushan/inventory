@@ -2,7 +2,10 @@
     <div>
         <div class="row">
             <div class="col-md-12">
-                <user-card :callback="updateUser" :user="user"></user-card>
+                <div v-show="success" class="alert alert-success">
+                    <strong>Success!</strong> User successfully updated.
+                </div>
+                <user-card :callback="updateUser" :user="user" :errors="errors"></user-card>
             </div>
         </div>
     </div>
@@ -15,7 +18,10 @@
     export default {
         data() {
             return {
-                user: {}
+                user: {},
+                errors: {},
+                success: false
+
             }
         },
 
@@ -25,9 +31,18 @@
 
         methods: {
             updateUser(user) {
-                UserService.update(user.id, user).then(response => console.log(response));
+                return UserService.update(user.id, user)
+                        .then((reponse) => {
+                            this.$set('success', true);
+                            this.$set('errors', {});
+                        }).catch((response) => {
+                            this.$set('success', false);
+                            this.$set('errors', response.data);
+                        });
             }
         },
+
+
 
         route: {
             data(transition) {

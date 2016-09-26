@@ -11,10 +11,10 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr v-for="item in item.details">
-                        <td>{{ item.item_no }}</td>
-                        <td>{{ item.name }}</td>
-                        <td>{{ item.quantity }}</td>
+                    <tr v-for="detail in item.details">
+                        <td>{{ detail.item_no }}</td>
+                        <td>{{ detail.item.name }}</td>
+                        <td>{{ detail.quantity }}</td>
                         <td><i @click="removeItem(item)" class="fa fa-trash-o"></i></td>
                     </tr>
                     </tbody>
@@ -42,7 +42,11 @@
         methods: {
             updateMaterialRequest(data) {
                 MaterialRequestService.store(data).then(response => console.log(response));
-            }
+            },
+
+            removeItem(item) {
+                this.items.$remove(item);
+            },
         },
 
         route: {

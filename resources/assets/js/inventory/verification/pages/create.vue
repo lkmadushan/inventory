@@ -39,6 +39,9 @@
 
     <div v-show="display">
         <verification-list :list="verifications.data"></verification-list>
+             <div class="pull-right">
+                <pagination :pagination="verifications" :callback="fetchTodayVerifications"></pagination>
+            </div>
     </div>
 
 </template>

@@ -17,6 +17,7 @@ class CreateMaterialRequestsTable extends Migration
             $table->string('number');
             $table->integer('user_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

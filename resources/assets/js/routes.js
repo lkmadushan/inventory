@@ -40,8 +40,10 @@ var routes = {
 
                     '/create': {
                         component: require('./inventory/material-requests/pages/create.vue')
+                    },
+                    '/issue/:id': {
+                        component: require('./inventory/material-requests/dispatch/pages/show.vue')
                     }
-
                 }
             },
 

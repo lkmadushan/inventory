@@ -34,7 +34,8 @@
 		data() {
 			return {
 				inventories: {},
-				query: {}
+				query: {},
+				selected: []
 			}
 		},
 
@@ -43,6 +44,7 @@
 		created() {
 			this.fetchInventories();
 		},
+
 
 		methods: {
 			fetchInventories(page = 1) {

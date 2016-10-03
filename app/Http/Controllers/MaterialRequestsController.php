@@ -20,7 +20,7 @@ class MaterialRequestsController extends Controller
     public function show($id)
     {
 
-        $materialRequest = MaterialRequest::with('details')->find($id);
+        $materialRequest = MaterialRequest::with('details.item')->find($id);
 
         return response()->json($materialRequest->toArray());
     }
@@ -38,6 +38,11 @@ class MaterialRequestsController extends Controller
         $request->details()->saveMany($details);
 
         return response()->json(['success',  true]);
+    }
+
+    public function distroy(MaterialRequest $materialRequest)
+    {
+        $materialRequest->delete();
     }
 
 }

@@ -6,7 +6,6 @@ require('bootstrap-sass');
 window.Vue = require('vue');
 window.VueRouter = require('vue-router');
 window.VueStrap = require('vue-strap/dist/vue-strap.min.js');
-window.VueValidator = require('vue-validator/dist/vue-validator.js');
 
 Vue.use(VueRouter);
 require('vue-resource');

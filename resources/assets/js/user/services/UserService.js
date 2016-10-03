@@ -27,7 +27,7 @@ export default class {
             .then(response => response.json());
     }
 
-    static delete(id) {
+    static remove(id) {
         return Vue.http
             .delete('/api/v1/users/' + id)
             .then(response => response.json());

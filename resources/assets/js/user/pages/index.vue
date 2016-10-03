@@ -73,7 +73,10 @@
 
 			deleteUser(user) {
 
-					UserService.delete(user.id).then(response => this.$remove('users', user));
+				UserService.remove(user.id).then((response) => {
+					this.fetchUsers();
+				});
+
 			},
 		}
 	}

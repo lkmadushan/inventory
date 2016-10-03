@@ -19,6 +19,7 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'auth'], function() {
     Route::get('/users/{user}', 'UsersController@show');
     Route::get('/users','UsersController@index');
     Route::patch('/users/{user}','UsersController@update');
+    Route::delete('/users/{user}', 'UsersController@delete');
 
     Route::get('/material-requests', 'MaterialRequestsController@index');
     Route::get('/material-requests/{id}', 'MaterialRequestsController@show');

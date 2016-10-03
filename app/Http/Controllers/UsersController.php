@@ -33,4 +33,11 @@ class UsersController extends Controller
         return response()->json($user->toArray());
     }
 
+    public function delete(User $user)
+    {
+        $user->delete($user);
+
+        return response()->json($user->toArray());
+    }
+
 }

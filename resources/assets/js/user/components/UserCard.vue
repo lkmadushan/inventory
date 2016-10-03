@@ -1,5 +1,5 @@
 <template>
-    <form class="form-horizontal" role="form" @submit.prevent="submitForm" method="post">
+    <form novalidate class="form-horizontal" role="form" @submit.prevent="submitForm" method="post">
         <tabs>
             <tab header="General">
                 <div class="row">
@@ -186,6 +186,16 @@
                                        id="password"
                                        v-model="user.password"
                                        placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="password_confirm" class="col-sm-4 control-label">Confirm Password</label>
+                            <div class="col-sm-8">
+                                <input type="password"
+                                       class="form-control"
+                                       id="password_confirm"
+                                       v-model="user.password_confirm"
+                                       placeholder="Confirm Password">
                             </div>
                         </div>
 

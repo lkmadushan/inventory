@@ -72,6 +72,9 @@ var routes = {
                     },
                     '/create': {
                         component: require('./user/pages/create.vue')
+                    },
+                    '/test': {
+                        component: require('./user/pages/test.vue')
                     }
                 }
             }

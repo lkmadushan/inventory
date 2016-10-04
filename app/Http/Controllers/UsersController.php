@@ -16,6 +16,10 @@ class UsersController extends Controller
 
     public function store()
     {
+        $this->validate(request(), [
+            'first_name' => 'exists:users,first_name'
+        ]);
+
         return User::create(request()->all());
     }
 

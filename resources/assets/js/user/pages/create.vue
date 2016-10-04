@@ -22,6 +22,7 @@
             'pagination': Pagination,
             'search': Search,
             'user-card': UserCard
+
         },
 
         methods:{

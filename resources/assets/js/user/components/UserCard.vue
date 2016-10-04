@@ -114,6 +114,7 @@
                                        class="form-control"
                                        id="email"
                                        v-model="user.email"
+                                       v-validate="email"
                                        placeholder="Email Address">
                             </div>
                         </div>
@@ -211,6 +212,9 @@
 </template>
 
 <script>
+
+
+
     export default {
 
         props: {
@@ -239,4 +243,3 @@
         }
     }
 </script>
-

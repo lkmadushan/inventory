@@ -14,7 +14,6 @@
     import UserCard from '../../user/components/UserCard.vue';
     import UserService from '../../user/services/UserService';
 
-
     export default {
         components: {
             'tab': VueStrap.tab,

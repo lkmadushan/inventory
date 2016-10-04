@@ -105,16 +105,20 @@
 
 
 
-                    <div class="col-md-4">
+                    <div class="col-md-6">
 
                         <div class="form-group form-group-sm">
-                            <label for="email" class="col-sm-4 control-label">Email Address</label>
-                            <div class="col-sm-8">
-                                <input type="text"
-                                       class="form-control"
-                                       id="email"
-                                       v-model="user.email"
-                                       placeholder="Email Address">
+                            <label for="email" class="col-sm-3 control-label">Email</label>
+                            <div class="col-sm-5">
+                            <input class="form-control"
+                                   v-validate data-rules="required|email"
+                                   name="email"
+                                   type="text"
+                                   placeholder="Email"
+                                   id="email">
+                            </div>
+                            <div class="col-sm-4">
+                                <span class="text-danger" v-show="errors.has('email')">{{ errors.first('email') }}</span>
                             </div>
                         </div>
 

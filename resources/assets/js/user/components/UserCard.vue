@@ -295,7 +295,7 @@
 
 <script>
 
-
+    import UserService from '../../user/services/UserService';
 
     export default {
 
@@ -324,9 +324,9 @@
         methods: {
             submitForm() {
 
-
-
                 this.callback(this.user);
+
+                this.$route.router.go('/users');
 
             }
         }

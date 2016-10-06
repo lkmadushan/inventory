@@ -17,10 +17,13 @@ class UsersController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'first_name' => 'exists:users,first_name'
+            'first_name' => 'unique:users,first_name'
+
         ]);
 
-        return User::create(request()->all());
+        User::create(request()->all());
+        //return redirect()->route('/users');
+
     }
 
     public function show($user)

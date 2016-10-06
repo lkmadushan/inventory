@@ -61,6 +61,10 @@
 			this.fetchUsers();
 		},
 
+		ready() {
+			this.fetchUsers();
+		},
+
 		methods: {
 			fetchUsers(page = 1) {
 				var params = this.query;

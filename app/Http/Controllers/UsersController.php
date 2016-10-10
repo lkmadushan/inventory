@@ -17,12 +17,23 @@ class UsersController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'first_name' => 'unique:users,first_name'
+            'employee_id' => 'required',
+            'first_name' => 'required',
+            /*'last_name' => 'required',
+            'title' => 'required',
+            'department' => 'required',
+            'home_phone' => 'required',
+            'mobile_phone' => 'required',
+            'email' => 'required | unique:users,email',
+            'primary_address' => 'required',
+            'city' => 'required',
+            'country' => 'required',
+            'name' => 'required | unique:users,name',
+            'password' => 'required|same:password_confirm'*/
 
         ]);
 
         User::create(request()->all());
-        //return redirect()->route('/users');
 
     }
 

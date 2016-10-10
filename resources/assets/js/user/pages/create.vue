@@ -2,7 +2,7 @@
     <div>
         <div class="row">
             <div class="col-md-12">
-                <user-card :callback="createUser" :exrrors="formErrors"></user-card>
+                <user-card :callback="createUser"></user-card>
             </div>
         </div>
     </div>
@@ -15,11 +15,6 @@
     import UserService from '../../user/services/UserService';
 
     export default {
-        data() {
-            return {
-                formErrors: {}
-            }
-        },
 
         components: {
             'tab': VueStrap.tab,
@@ -33,12 +28,7 @@
         methods:{
 
             createUser(data){
-                UserService.store(data)
-                        .then(response => console.log(response))
-                        .catch(data => {
-                            this.formErrors = data.data;
-                        });
-
+                return UserService.store(data);
             }
         }
     }

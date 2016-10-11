@@ -2,6 +2,9 @@
     <form novalidate class="form-horizontal" role="form" @submit.prevent="submitForm" method="post">
         <tabs>
             <tab header="General">
+                <div v-show="success" class="alert alert-success">
+                    <strong>Success!</strong> User successfully created.
+                </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group form-group-sm">
@@ -61,7 +64,7 @@
                                        placeholder="First Name">
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-danger" v-show="errors['first_name']">{{ errors['first_name'][0] }}</span>
+                                <span class="text-danger" v-show="errors['first_name']">{{ errors['first_name'] }}</span>
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
@@ -76,7 +79,7 @@
                                        placeholder="Last Name">
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-danger" v-show="errors['last_name']">{{ errors['last_name'][0] }}</span>
+                                <span class="text-danger" v-show="errors['last_name']">{{ errors['last_name'] }}</span>
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
@@ -91,7 +94,7 @@
                                        placeholder="Title">
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-danger" v-show="errors['title']">{{ errors['title'][0] }}</span>
+                                <span class="text-danger" v-show="errors['title']">{{ errors['title'] }}</span>
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
@@ -106,7 +109,7 @@
                                        placeholder="Department">
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-danger" v-show="errors['department']">{{ errors['department'][0] }}</span>
+                                <span class="text-danger" v-show="errors['department']">{{ errors['department'] }}</span>
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
@@ -121,7 +124,7 @@
                                        placeholder="Home Phone">
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-danger" v-show="errors['home_phone']">{{ errors['home_phone'][0] }}</span>
+                                <span class="text-danger" v-show="errors['home_phone']">{{ errors['home_phone'] }}</span>
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
@@ -136,7 +139,7 @@
                                        placeholder="Mobile Phone">
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-danger" v-show="errors['mobile_phone']">{{ errors['mobile_phone'][0] }}</span>
+                                <span class="text-danger" v-show="errors['mobile_phone']">{{ errors['mobile_phone'] }}</span>
                             </div>
                         </div>
 
@@ -159,7 +162,7 @@
                                    v-model="user.email">
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-danger" v-show="errors['email']">{{ errors['email'][0] }}</span>
+                                <span class="text-danger" v-show="errors['email']">{{ errors['email'] }}</span>
                             </div>
                         </div>
 
@@ -175,7 +178,7 @@
                                        placeholder="Primary Address">
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-danger" v-show="errors['primary_address']">{{ errors['primary_address'][0] }}</span>
+                                <span class="text-danger" v-show="errors['primary_address']">{{ errors['primary_address'] }}</span>
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
@@ -189,7 +192,7 @@
                                        placeholder="City">
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-danger" v-show="errors['city']">{{ errors['city'][0] }}</span>
+                                <span class="text-danger" v-show="errors['city']">{{ errors['city'] }}</span>
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
@@ -203,7 +206,7 @@
                                        placeholder="State">
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-danger" v-show="errors['state']">{{ errors['state'][0] }}</span>
+                                <span class="text-danger" v-show="errors['state']">{{ errors['state'] }}</span>
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
@@ -218,7 +221,7 @@
                                        placeholder="Country">
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-danger" v-show="errors['country']">{{ errors['country'][0] }}</span>
+                                <span class="text-danger" v-show="errors['country']">{{ errors['country'] }}</span>
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
@@ -233,7 +236,7 @@
                                        placeholder="Postal Code">
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-danger" v-show="errors['postal_code']">{{ errors['postal_code'][0] }}</span>
+                                <span class="text-danger" v-show="errors['postal_code']">{{ errors['postal_code'] }}</span>
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
@@ -248,7 +251,7 @@
                                        placeholder="Username">
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-danger" v-show="errors['name']">{{ errors['name'][0] }}</span>
+                                <span class="text-danger" v-show="errors['name']">{{ errors['name'] }}</span>
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
@@ -263,7 +266,7 @@
                                        placeholder="Password">
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-danger" v-show="errors['password']">{{ errors['password'][0] }}</span>
+                                <span class="text-danger" v-show="errors['password']">{{ errors['password'] }}</span>
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
@@ -278,7 +281,7 @@
                                        placeholder="Confirm Password">
                             </div>
                             <div class="col-sm-4">
-                                <span class="text-danger" v-show="errors['password_confirm']">{{ errors['password_confirm'][0] }}</span>
+                                <span class="text-danger" v-show="errors['password_confirm']">{{ errors['password_confirm'] }}</span>
                             </div>
                         </div>
 
@@ -302,7 +305,8 @@
 
         data() {
             return {
-                errors: {}
+                errors: {},
+                success: false
             }
         },
 
@@ -329,11 +333,11 @@
 
                 return this.callback(this.user)
                         .then((reponse) => {
-                            this.user = {};
-                            console.log(this.user)
-                        })
-                        .catch((reponse) => {
-                            this.errors = reponse.data;
+                            this.success = true;
+                            this.errors = {};
+                        }).catch((response) => {
+                            this.success = false;
+                            this.errors = response.data;
                         });
             }
         }

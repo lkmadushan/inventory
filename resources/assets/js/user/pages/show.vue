@@ -25,9 +25,11 @@
 
         methods: {
             updateUser(user) {
-                UserService.update(user.id, user).then(response => console.log(response));
+                return UserService.update(user.id, user);
             }
         },
+
+
 
         route: {
             data(transition) {

@@ -4,6 +4,7 @@
 		<table class="table table-hover table-condensed">
 			<thead>
 			<tr>
+				
 				<th>First Name</th>
 				<th>Last Name</th>
 				<th>Username</th>
@@ -16,6 +17,7 @@
 			</thead>
 			<tbody>
 			<tr v-for="user in users.data" >
+
 				<td v-link="{ path: '/users/' + user.id }">{{ user.first_name }}</td>
 				<td>{{ user.last_name }}</td>
 				<td>{{ user.name }}</td>

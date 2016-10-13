@@ -147,8 +147,8 @@
 
                     <div class="col-md-6">
                         <div class="form-group form-group-sm">
-                            <label for="email" class="col-sm-4 control-label">Email</label>
-                            <div class="col-sm-8">
+                            <label for="email" class="col-sm-3 control-label">Email</label>
+                            <div class="col-sm-5">
                                 <input type="text"
                                        class="form-control"
                                        id="email"
@@ -264,8 +264,8 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="password_confirm" class="col-sm-4 control-label">Confirm Password</label>
-                            <div class="col-sm-8">
+                            <label for="password_confirm" class="col-sm-3 control-label">Confirm Password</label>
+                            <div class="col-sm-5">
                                 <input type="password"
                                        class="form-control"
                                        id="password_confirm"

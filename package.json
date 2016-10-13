@@ -18,6 +18,11 @@
   "dependencies": {
     "font-awesome": "^4.6.3",
     "lodash": "^4.16.1",
+<<<<<<< HEAD
+=======
+    "vee-validate": "^1.0.0-beta.7",
+
+>>>>>>> 79dd957a9604e35ec247bd2b57ef07249bb4a3e2
     "vue-strap": "^1.1.25"
   }
 }

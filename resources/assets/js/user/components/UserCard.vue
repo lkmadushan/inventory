@@ -2,36 +2,49 @@
     <form novalidate class="form-horizontal" role="form" @submit.prevent="submitForm" method="post">
         <tabs>
             <tab header="General">
+                <div v-show="success" class="alert alert-success">
+                    <strong>Success!</strong> User successfully created.
+                </div>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group form-group-sm">
-                            <label for="employee_status" class="col-sm-4 control-label">Employee Status</label>
-                            <div class="col-sm-8">
+                            <label for="employee_status" class="col-sm-3 control-label">Employee Status</label>
+                            <div class="col-sm-5">
                                 <select class="form-control"
                                         id="employee_status"
+                                        name="employee_status"
                                         v-model="user.employee_status">
                                     <option selected value="1">Active</option>
                                     <option value="2">Inactive</option>
                                 </select>
                             </div>
+                            <div class="col-sm-4">
+                                <span></span>
+                            </div>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="user_type" class="col-sm-4 control-label">User Type</label>
-                            <div class="col-sm-8">
+                            <label for="user_type" class="col-sm-3 control-label">User Type</label>
+                            <div class="col-sm-5">
                                 <select class="form-control"
                                         id="user_type"
+                                        name="user_type"
                                         v-model="user.user_type">
                                     <option selected value="1">Regular User</option>
                                     <option value="2">Administrator</option>
                                 </select>
                             </div>
+                            <div class="col-sm-4">
+                                <span></span>
+                            </div>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="employee_id" class="col-sm-4 control-label">Employee Id</label>
-                            <div class="col-sm-8">
+                            <label for="employee_id" class="col-sm-3 control-label">Employee Id</label>
+                            <div class="col-sm-5">
                                 <input type="text"
+                                       v-validate data-rules="required|numeric"
                                        class="form-control"
                                        id="employee_id"
+                                       name="employee_id"
                                        v-model="user.employee_id"
                                        placeholder="Employee Id">
                             </div>
@@ -40,13 +53,14 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="first_name" class="col-sm-4 control-label">First Name</label>
-                            <div class="col-sm-8">
+                            <label for="first_name" class="col-sm-3 control-label">First Name</label>
+                            <div class="col-sm-5">
                                 <input type="text"
                                        class="form-control"
                                        id="first_name"
+                                       name="first_name"
                                        v-model="user.first_name"
-                                       required
+                                       v-validate data-rules="required"
                                        placeholder="First Name">
                             </div>
                             <div class="col-sm-4">
@@ -54,12 +68,14 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="last_name" class="col-sm-4 control-label">Last Name</label>
-                            <div class="col-sm-8">
+                            <label for="last_name" class="col-sm-3 control-label">Last Name</label>
+                            <div class="col-sm-5">
                                 <input type="text"
                                        class="form-control"
                                        id="last_name"
+                                       name="last_name"
                                        v-model="user.last_name"
+                                       v-validate data-rules="required"
                                        placeholder="Last Name">
                             </div>
                             <div class="col-sm-4">
@@ -67,13 +83,14 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="title" class="col-sm-4 control-label">Title</label>
-                            <div class="col-sm-8">
+                            <label for="title" class="col-sm-3 control-label">Title</label>
+                            <div class="col-sm-5">
                                 <input type="text"
                                        class="form-control"
                                        id="title"
+                                       name="title"
                                        v-model="user.title"
-                                       required
+                                       v-validate data-rules="required"
                                        placeholder="Title">
                             </div>
                             <div class="col-sm-4">
@@ -81,13 +98,14 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="department" class="col-sm-4 control-label">Department</label>
-                            <div class="col-sm-8">
+                            <label for="department" class="col-sm-3 control-label">Department</label>
+                            <div class="col-sm-5">
                                 <input type="text"
                                        class="form-control"
                                        id="department"
+                                       name="department"
                                        v-model="user.department"
-                                       required
+                                       v-validate data-rules="required"
                                        placeholder="Department">
                             </div>
                             <div class="col-sm-4">
@@ -95,13 +113,14 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="home_phone" class="col-sm-4 control-label">Home Phone</label>
-                            <div class="col-sm-8">
+                            <label for="home_phone" class="col-sm-3 control-label">Home Phone</label>
+                            <div class="col-sm-5">
                                 <input type="text"
                                        class="form-control"
                                        id="home_phone"
+                                       name="home_phone"
                                        v-model="user.home_phone"
-                                       value=""
+                                       v-validate data-rules="required"
                                        placeholder="Home Phone">
                             </div>
                             <div class="col-sm-4">
@@ -109,12 +128,14 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="mobile_phone" class="col-sm-4 control-label">Mobile Phone</label>
-                            <div class="col-sm-8">
+                            <label for="mobile_phone" class="col-sm-3 control-label">Mobile Phone</label>
+                            <div class="col-sm-5">
                                 <input type="text"
                                        class="form-control"
                                        id="mobile_phone"
+                                       name="mobile_phone"
                                        v-model="user.mobile_phone"
+                                       v-validate data-rules="required"
                                        placeholder="Mobile Phone">
                             </div>
                             <div class="col-sm-4">
@@ -140,12 +161,14 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="primary_address" class="col-sm-4 control-label">Primary Address</label>
-                            <div class="col-sm-8">
+                            <label for="primary_address" class="col-sm-3 control-label">Primary Address</label>
+                            <div class="col-sm-5">
                                 <input type="text"
                                        class="form-control"
                                        id="primary_address"
+                                       name="primary_address"
                                        v-model="user.primary_address"
+                                       v-validate data-rules="required"
                                        placeholder="Primary Address">
                             </div>
                             <div class="col-sm-4">
@@ -153,12 +176,13 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="city" class="col-sm-4 control-label">City</label>
-                            <div class="col-sm-8">
+                            <label for="city" class="col-sm-3 control-label">City</label>
+                            <div class="col-sm-5">
                                 <input type="text"
                                        class="form-control"
                                        id="city"
                                        v-model="user.city"
+                                       v-validate data-rules="required"
                                        placeholder="City">
                             </div>
                             <div class="col-sm-4">
@@ -166,11 +190,12 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="state" class="col-sm-4 control-label">State</label>
-                            <div class="col-sm-8">
+                            <label for="state" class="col-sm-3 control-label">State</label>
+                            <div class="col-sm-5">
                                 <input type="text"
                                        class="form-control"
                                        id="state"
+                                       name="state"
                                        v-model="user.state"
                                        placeholder="State">
                             </div>
@@ -179,12 +204,14 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="country" class="col-sm-4 control-label">Country</label>
-                            <div class="col-sm-8">
+                            <label for="country" class="col-sm-3 control-label">Country</label>
+                            <div class="col-sm-5">
                                 <input type="text"
                                        class="form-control"
                                        id="country"
+                                       name="country"
                                        v-model="user.country"
+                                       v-validate data-rules=""
                                        placeholder="Country">
                             </div>
                             <div class="col-sm-4">
@@ -192,12 +219,14 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="postal_code" class="col-sm-4 control-label">Postal Code</label>
-                            <div class="col-sm-8">
+                            <label for="postal_code" class="col-sm-3 control-label">Postal Code</label>
+                            <div class="col-sm-5">
                                 <input type="text"
                                        class="form-control"
                                        id="postal_code"
+                                       name="postal_code"
                                        v-model="user.postal_code"
+                                       v-validate data-rules=""
                                        placeholder="Postal Code">
                             </div>
                             <div class="col-sm-4">
@@ -205,12 +234,14 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="name" class="col-sm-4 control-label">Username</label>
-                            <div class="col-sm-8">
+                            <label for="name" class="col-sm-3 control-label">Username</label>
+                            <div class="col-sm-5">
                                 <input type="text"
                                        class="form-control"
                                        id="name"
+                                       name="name"
                                        v-model="user.name"
+                                       v-validate data-rules="required"
                                        placeholder="Username">
                             </div>
                             <div class="col-sm-4">
@@ -218,12 +249,14 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="password" class="col-sm-4 control-label">Password</label>
-                            <div class="col-sm-8">
+                            <label for="password" class="col-sm-3 control-label">Password</label>
+                            <div class="col-sm-5">
                                 <input type="password"
                                        class="form-control"
                                        id="password"
+                                       name="password"
                                        v-model="user.password"
+                                       v-validate data-rules="confirmed:password_confirm|required"
                                        placeholder="Password">
                             </div>
                             <div class="col-sm-4">
@@ -254,6 +287,7 @@
 </template>
 
 <script>
+
     export default {
         props: {
             callback: {

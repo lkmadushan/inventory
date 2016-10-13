@@ -33,6 +33,7 @@ class UsersController extends Controller
         ]);
 
         return User::create(request()->all());
+
     }
 
     public function show($user)
